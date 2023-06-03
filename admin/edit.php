@@ -8,9 +8,15 @@
 ///////////////////////////lihat/////////////////////////////////////////////
 if($_GET['aksi']=='prosesedittiket'){
 mysqli_query($koneksi,"UPDATE tiket SET nama_tiket='$_POST[nama_tiket]',harga_tiket='$_POST[harga_tiket]',keterangan='$_POST[keterangan]' WHERE id_tiket='$_GET[id_tiket]'");
-echo "<script>window.location=('index.php?aksi=tiket')</script>";
+echo "<script>window.alert('Data Berhasil di edit dan disimpan');
+window.location=('index.php?aksi=tiket')</script>";
 }
-
+///////////////////////////////////////////////////////////////////////////////////////////////////
+elseif($_GET['aksi']=='proseseditpengunjung'){
+	mysqli_query($koneksi,"UPDATE pengunjung SET nama_pengunjung='$_POST[nama_pengunjung]',email_pengunjung='$_POST[email_pengunjung]',no_hp='$_POST[no_hp]',alamat='$_POST[alamat]' WHERE id_pengunjung='$_GET[id_pengunjung]'");
+	echo "<script>window.alert('Data Berhasil di edit dan disimpan');
+	window.location=('index.php?aksi=pengunjung')</script>";
+}
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 elseif($_GET['aksi']=='proseseditmenu'){
 	mysqli_query($koneksi,"UPDATE menu SET nama_menu='$_POST[nama_menu]',link='$_POST[link]',link_b='$_POST[link_b]',status='$_POST[status]',icon_menu='$_POST[icon_menu]',aktif='$_POST[aktif]' WHERE id_menu='$_GET[id_menu]'");

@@ -152,7 +152,340 @@ elseif($_GET['aksi']=='tiket'){
         </form></div> </div></div></div>
     ";
     }
+ elseif($_GET['aksi']=='pengunjung'){
+        echo"<div class='row'>
+                        <div class='col-lg-12'>
+                            <div class='panel panel-default'>
+                                <div class='panel-heading'>INFORMASI 
+                                </div>
+                                <div class='panel-body'>	
+                    <button class='btn btn-info' data-toggle='modal' data-target='#uiModal'>
+                                        Tambah Data
+                                    </button> <a href='laporan.php?aksi=pengunjung' target='_blank' class='btn btn-info' ><i class='fa fa-print' ></i></span></a></br></br>
+                                       <div class='table-responsive'>		
+             <table id='example1' class='table table-bordered table-striped'>
+                                            <thead>
+                                                <tr> <th>No</th>
+                                                    <th>Nama Pengunjung</th>
+                                                    <th>No HP</th>	 
+                                                     <th>AKSI</th>	
+                                                </tr>
+                                            </thead><tbody>
+                            ";
+                    
+        $no=0;
+        $sql=mysqli_query($koneksi," SELECT * FROM pengunjung ORDER BY id_pengunjung ASC");
+        while ($t=mysqli_fetch_array($sql)){	
+        $no++;
+                                            echo"
+                                                <tr><td>$no</td>
+                                                    <td>$t[nama_pengunjung]</td>
+                                                    <td>$t[no_hp]</td> 
+                                    <td><div class='btn-group'>
+                              <button type='button' class='btn btn-info'>AKSI</button>
+                              <button type='button' class='btn btn-info dropdown-toggle' data-toggle='dropdown'>
+                                <span class='caret'></span>
+                                <span class='sr-only'>Toggle Dropdown</span>
+                              </button>
+                              <ul class='dropdown-menu' role='menu'>
+                                <li><a href='index.php?aksi=editpengunjung&id_pengunjung=$t[id_pengunjung]' title='Edit'><i class='fa fa-pencil'></i>edit</a></li>
+                                <li><a href='hapus.php?aksi=hapuspengunjung&id_pengunjung=$t[id_pengunjung]' onclick=\"return confirm ('Apakah yakin ingin menghapus $t[nama_pengunjung] ?')\" title='Hapus'><i class='fa fa-remove'></i>hapus</li>
+                                </ul>
+                            </div></td>
+                                                </tr>";
+        }
+                                        echo"
+                                            </tbody></table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       </div>";			
+        
+        ////////////////input admin			
+        
+        echo"			
+        <div class='col-lg-12'>
+                                <div class='modal fade' id='uiModal' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
+                                        <div class='modal-dialog'>
+                                            <div class='modal-content'>
+                                                <div class='modal-header'>
+                                                    <button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
+                                                    <h4 class='modal-title' id='H3'>Input Data</h4>
+                                                </div>
+                                                <div class='modal-body'>
+                                                   <form role='form' method='post' action='input.php?aksi=inputpengunjung'>
+                                            
+                                                    <label>nama pengunjung</label>
+                                                    <input type='text' class='form-control' name='nama_pengunjung'/><br>
+                                                    <label>no hp</label>
+                                                    <input type='text' class='form-control' name='no_hp'/><br>
+                                                    <label>Email</label>
+                                                    <input type='email' class='form-control' name='email_pengunjung'/><br>
+                                                    <label>Alamat</label>
+                                                    <input type='text' class='form-control' name='alamat'/><br>
+                                                    <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
+                                                    <button type='submit' class='btn btn-primary'>Save </button>
+                                                </div>
+                            </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                    </div>			
+        "; 
+ }
+/////////////////////////////////////////////////////////////////////////////////////////////////
+        
+elseif($_GET['aksi']=='editpengunjung'){
+        $tebaru=mysqli_query($koneksi," SELECT * FROM pengunjung WHERE id_pengunjung=$_GET[id_pengunjung] ");
+        $t=mysqli_fetch_array($tebaru);
+        echo"
+        <div class='row'>
+                        <div class='col-lg-12'>
+                            <div class='panel panel-default'>
+                                <div class='panel-heading'>EDIT  $t[nama_pengunjung] $t[id_pengunjung]
+                                </div>
+                                <div class='panel-body'>
+        <form id='form1'  method='post' action='edit.php?aksi=proseseditpengunjung&id_pengunjung=$t[id_pengunjung]'>
+                                                    <label>nama pengunjung</label>
+                                                    <input type='text' class='form-control' value='$t[nama_pengunjung]' name='nama_pengunjung'/><br>
+                                                    <label>harga</label>
+                                                    <input type='text' class='form-control' value='$t[no_hp]' name='no_hp'/><br>                                
+                                                    <label>Email</label>
+                                                    <input type='email' class='form-control' value='$t[email_pengunjung]' name='email_pengunjung'/><br>
+                                                    <label>Alamat</label>
+                                                    <input type='text' class='form-control' value='$t[alamat]' name='alamat'/><br>
+                <div class='modal-footer'>
+                                                    <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
+                                                    <button type='submit' class='btn btn-primary'>Save </button>
+                                                </div> </div>
+            </form></div> </div></div></div>
+        ";
+ }
+  /////////////////////////////////////////////////////////////////////////////////////////////////
+  elseif($_GET['aksi']=='booking'){
+function generateBookingCode($length = 13) {
+    $characters = '0123456789#%ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $code = '';
+    for ($i = 0; $i < $length; $i++) {
+        $index = rand(0, strlen($characters) - 1);
+        $code .= $characters[$index];
+    }
+    return $code;
+    }
+    // Contoh penggunaan
+    $bookingCode = generateBookingCode();
 
+    echo"<div class='row'>
+                    <div class='col-lg-12'>
+                        <div class='panel panel-default'>
+                            <div class='panel-heading'>INFORMASI 
+                            </div>
+                            <div class='panel-body'>	
+                <button class='btn btn-info' data-toggle='modal' data-target='#uiModal'>
+                                    Tambah Data
+                                </button> <a href='laporan.php?aksi=booking' target='_blank' class='btn btn-info' ><i class='fa fa-print' ></i></span></a></br></br>
+                                   <div class='table-responsive'>		
+         <table id='example1' class='table table-bordered table-striped'>
+                                        <thead>
+                                            <tr> <th>No</th>
+                                                <th>Nama Pengunjung</th>
+                                                <th>Nama Tiket</th>	 
+                                                <th>AKSI</th>	
+                                            </tr>
+                                        </thead><tbody>
+                        ";
+                
+    $no=0;
+    $sql=mysqli_query($koneksi," SELECT * FROM booking,pengunjung,tiket WHERE booking.id_pengunjung=pengunjung.id_pengunjung AND booking.id_tiket=tiket.id_tiket  ORDER BY booking.id_booking ASC");
+    while ($t=mysqli_fetch_array($sql)){	
+    $no++;
+                                        echo"
+                                            <tr><td>$no</td>
+                                                <td>$t[nama_pengunjung]</td>
+                                                <td>$t[nama_tiket]</td> 
+                                <td><div class='btn-group'>
+                          <button type='button' class='btn btn-info'>AKSI</button>
+                          <button type='button' class='btn btn-info dropdown-toggle' data-toggle='dropdown'>
+                            <span class='caret'></span>
+                            <span class='sr-only'>Toggle Dropdown</span>
+                          </button>
+                          <ul class='dropdown-menu' role='menu'>
+                             <li><a href='index.php?aksi=detailbooking&id_booking=$t[id_booking]' title='Edit'><i class='fa fa-eye'></i>lihat</a></li>
+                            <li><a href='index.php?aksi=editbooking&id_booking=$t[id_booking]' title='Edit'><i class='fa fa-pencil'></i>edit</a></li>
+                            <li><a href='hapus.php?aksi=hapusbooking&id_booking=$t[id_booking]' onclick=\"return confirm ('Apakah yakin ingin menghapus $t[kode_booking] ?')\" title='Hapus'><i class='fa fa-remove'></i>hapus</li>
+                            </ul>
+                        </div></td>
+                                            </tr>";
+    }
+                                    echo"
+                                        </tbody></table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   </div>";			
+    
+    ////////////////input admin			
+    
+    echo"			
+    <div class='col-lg-12'>
+                            <div class='modal fade' id='uiModal' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
+                                    <div class='modal-dialog'>
+                                        <div class='modal-content'>
+                                            <div class='modal-header'>
+                                                <button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
+                                                <h4 class='modal-title' id='H3'>Input Data</h4>
+                                            </div>
+                                            <div class='modal-body'>
+                                               <form role='form' method='post' action='input.php?aksi=inputbooking'>
+                                               <label>Kode Booking</label>
+                                               <input type='text' class='form-control' value='$bookingCode'  disabled/>
+                                               <input type='hidden' class='form-control' value='$bookingCode' name='kode_booking'>
+                                               <div class='form-group'>
+                                               <label>Pilih Tiket</label>
+                                               <select class='form-control select2' style='width: 100%;' name=id_tiket>
+                                               <option value='' selected>Pilih Tiket</option>"; 
+                                                $sql=mysqli_query($koneksi,"SELECT * FROM tiket ORDER BY id_tiket");
+                                                while ($c=mysqli_fetch_array($sql))
+                                                {
+                                                   echo "<option value=$c[id_tiket]>$c[nama_tiket]</option>";
+                                                }
+                                                   echo "
+                                               </select><br><br>
+                                               <label>Pilih Pengunjung</label>
+                                               <select class='form-control select2' style='width: 100%;' name=id_pengunjung>
+                                               <option value='' selected>Pilih Pengujung</option>"; 
+                                                $sql=mysqli_query($koneksi,"SELECT * FROM pengunjung ORDER BY id_pengunjung");
+                                                while ($c=mysqli_fetch_array($sql))
+                                                {
+                                                   echo "<option value=$c[id_pengunjung]>$c[nama_pengunjung]</option>";
+                                                }
+                                                   echo "
+                                               </select><br><br>
+                                                
+                                                <label>Jumlah Tiket $bookingCode</label>
+                                                <input type='text' class='form-control' name='jml'/><br>
+                                                <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
+                                                <button type='submit' class='btn btn-primary'>Save </button>
+                                            </div>
+                        </form>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                </div>			
+    "; 
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////
+    
+elseif($_GET['aksi']=='detailbooking'){
+    $sql=mysqli_query($koneksi," SELECT * FROM booking,pengunjung,tiket WHERE booking.id_pengunjung=pengunjung.id_pengunjung AND booking.id_tiket=tiket.id_tiket AND booking.id_booking=$_GET[id_booking]");
+    $t=mysqli_fetch_array($sql);
+    $harga_format = number_format($t[harga_tiket], 0, ',', '.');
+    $total =$t[harga_tiket]*$t[jml];
+    $total_rp = number_format($total, 0, ',', '.');
+
+// abil data QR Code
+require_once '../qrcode/qrlib.php';
+// Data yang akan dijadikan QR Code
+$data = $t[kode_booking]; // Ganti dengan data yang diinginkan
+
+// Nama berkas QR Code yang akan dihasilkan
+$kode_booking = $t['kode_booking'];
+
+// Nama berkas QR Code yang akan dihasilkan
+$filename = $kode_booking . '.png';
+
+
+// Path penyimpanan berkas QR Code
+$filepath = '../qrcode/gambar/' . $filename;
+
+// Ukuran dan level koreksi kesalahan QR Code
+$size = 10;
+$level = 'L';
+
+// Generate QR Code
+QRcode::png($data, $filepath, $level, $size);
+echo"
+    <div class='row'>
+                    <div class='col-lg-12'>
+                        <div class='panel panel-default'>
+                            <div class='panel-heading'>EDIT  $t[kode_booking] $t[id_booking]
+                            </div>
+                            <div class='panel-body'>
+                            <table class='table table-bordered table-striped'>
+                            <tr>
+                              <td width='11%'>Nama Pengujung </td>
+                              <td width='1%'>:</td>
+                              <td width='88%'>$t[nama_pengunjung]</td>
+                            </tr>
+                            <tr>
+                              <td>Jumlah Tiket </td>
+                              <td>:</td>
+                              <td>$t[jml]</td>
+                            </tr>
+                            <tr>
+                              <td>Harga Tiket </td>
+                              <td>:</td>
+                              <td>Rp. $harga_format</td>
+                            </tr>
+                            <tr>
+                              <td>Total Harga </td>
+                              <td>:</td>
+                              <td>Rp. $total_rp</td>
+                            </tr>
+                            <tr>
+                              <td>Kode Bokking </td>
+                              <td>:</td>
+                              <td>$t[kode_booking]</td>
+                            </tr>
+                            <tr>
+                              <td>Barcode Booking </td>
+                              <td>:</td>
+                              <td><img src='$filepath' alt='QR Code'></td>
+                            </tr>
+                            <tr>
+                            <td> </td>
+                            <td>:</td>
+                            <td><a href='index.php?aksi=booking' title='Edit'><i class='fa fa-eye'></i>kembali</a></td>
+                          </tr>
+                            
+                          </table>
+
+                            </div> 
+                    </div>
+    </div></div>
+    ";
+}
+elseif($_GET['aksi']=='editbooking'){
+    $tebaru=mysqli_query($koneksi," SELECT * FROM booking WHERE id_booking=$_GET[id_booking] ");
+    $t=mysqli_fetch_array($tebaru);
+    echo"
+    <div class='row'>
+                    <div class='col-lg-12'>
+                        <div class='panel panel-default'>
+                            <div class='panel-heading'>EDIT  $t[nama_booking] $t[id_booking]
+                            </div>
+                            <div class='panel-body'>
+    <form id='form1'  method='post' action='edit.php?aksi=proseseditbooking&id_booking=$t[id_booking]'>
+                                                <label>nama booking</label>
+                                                <input type='text' class='form-control' value='$t[nama_booking]' name='nama_booking'/><br>
+                                                <label>harga</label>
+                                                <input type='text' class='form-control' value='$t[no_hp]' name='no_hp'/><br>                                
+                                                <label>Email</label>
+                                                <input type='email' class='form-control' value='$t[email_booking]' name='email_booking'/><br>
+                                                <label>Alamat</label>
+                                                <input type='text' class='form-control' value='$t[alamat]' name='alamat'/><br>
+            <div class='modal-footer'>
+                                                <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
+                                                <button type='submit' class='btn btn-primary'>Save </button>
+                                            </div> </div>
+        </form></div> </div></div></div>
+    ";
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////
 elseif($_GET['aksi']=='profil'){
 echo"			
 	<div class='row'>
@@ -205,8 +538,6 @@ $no++;
                </div>	
 	";
 }
-
-
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 

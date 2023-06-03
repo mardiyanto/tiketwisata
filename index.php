@@ -49,21 +49,11 @@ include "koneksi.php";
 							  <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
 							    <ul class="navbar-nav">
 									<li><a href="#home">Home</a></li>
-									<li><a href="#about">About</a></li>									
-									<li><a href="#secvice">Service</a></li>
+									<li><a href="#about">Tentang</a></li>									
+									<li><a href="#secvice">Fasilitas</a></li>
 									<li><a href="#gallery">Gallery</a></li>
 									<li><a href="#faq">Faq</a></li>
 									<li><a href="#contact">Contact</a></li>
-									<!-- Dropdown -->
-								    <li class="dropdown">
-								      <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-								        Pages
-								      </a>
-								      <div class="dropdown-menu">
-								        <a class="dropdown-item" href="generic.html">Generic</a>
-								        <a class="dropdown-item" href="elements.html">Elements</a>
-								      </div>
-								    </li>
 							    </ul>
 							  </div>						
 						</div>
@@ -83,7 +73,7 @@ include "koneksi.php";
 										<h1 class="text-uppercase text-white">New Adventure</h1>
 										<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp <br>
 										or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
-										<a href="#" class="text-uppercase header-btn">Discover Now</a>
+										<a href="#" class="text-uppercase header-btn">PESAN TIKET SEKARANG</a>
 									</div>
 								</div>
 
@@ -100,7 +90,7 @@ include "koneksi.php";
 										<h1 class="text-uppercase text-white">New Trip</h1>
 										<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp <br>
 										or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
-										<a href="#" class="text-uppercase header-btn">Discover Now</a>
+										<a href="#" class="text-uppercase header-btn">PESAN TIKET SEKARANG</a>
 									</div>
 								</div>
 							</div>
@@ -116,7 +106,7 @@ include "koneksi.php";
 										<h1 class="text-uppercase text-white">New Experience</h1>
 										<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp <br>
 										or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
-										<a href="#" class="text-uppercase header-btn">Discover Now</a>
+										<a href="#" class="text-uppercase header-btn">PESAN TIKET SEKARANG</a>
 									</div>
 								</div>
 							</div>
@@ -130,7 +120,7 @@ include "koneksi.php";
 					<div class="row d-flex justify-content-center">
 						<div class="menu-content pb-40 col-lg-8">
 							<div class="title text-center">
-								<h1 class="mb-10">Why Choose Us Your Fitness Builder</h1>
+								<h1 class="mb-10">Tentang Tempat Wisata Kami</h1>
 								<p>Who are in extremely love with eco friendly system.</p>
 							</div>
 						</div>
@@ -143,20 +133,13 @@ include "koneksi.php";
 						</div>
 						<div class="col-lg-6 col-md-12 no-padding info-rigth">
 							<div class="info-content">
-								<h2 class="pb-30">We Realize that <br>
-								there are reduced <br>
-								Wastege Stand out</h2>
+								<h2 class="pb-30">Tentang Kami <br>
+								Kami menyediankan Fasilitas <br>
+								Kami menyediakan layanan</h2>
 								<p>
-									inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards – especially in the workplace. That’s why it’s crucial that, as women.									
-								</p>
-								<br>
-								<p>
-									inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards – especially in the workplace. That’s why it’s crucial that, as women. inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards – especially in the workplace. That’s why it’s crucial that, as women.									
-								</p>
-								<br>
-								<p>
-									inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards – especially in the workplace. That’s why it’s crucial that, as women.
-								</p>
+								Taman wisata Lentana garden, yang terletak di Blok 13, Pekon Gisting Atas, Kecamatan Gisting, Kabupaten Tanggamus, menawarkan keindahan dan kesejukan alam serta keaslian air setempat.
+Pantauan bintangpost.com dilokasi, taman wisata alam yang berada di lahan sekitar 1,5 hektar tersebut, dimanfaatkan secara maksimal untuk perokonomian masyarakat sekitar.
+Lokasi wisata tersebut juga mempunyai kantin dengan menu andalan, ikan bakar, ayam bakar dan lele bakar, yang semua bahan bakunya dari warga sekitar. Dan juga tiket masuk dan parkir dengan harga yang terjangkau, sekitar Rp2 ribu untuk motor dan Rp5 ribu untuk mobil, serta tiket masuk untuk anak-anak Rp5 ribu dan dewasa Rp10 ribu.</p>
 								</div>
 						</div>
 					</div>
@@ -165,69 +148,15 @@ include "koneksi.php";
 			<!-- End about Area -->
 			
 			
-			<!-- Start project Area -->
-			<section class="project-area section-gap" id="project">
-				<div class="container">
-					<div class="row d-flex justify-content-center">
-						<div class="menu-content pb-30 col-lg-8">
-							<div class="title text-center">
-								<h1 class="mb-10">Latest Project on the go</h1>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> labore  et dolore magna aliqua.</p>
-							</div>
-						</div>
-					</div>						
-					<div class="row justify-content-center d-flex">
-						<div class="active-works-carousel mt-40 col-lg-8">
-							<div class="item">
-								<img class="img-fluid" src="tema/img/why.jpg" alt="">
-								<div class="caption text-center mt-20">
-									<h6 class="text-uppercase">Vector Illustration</h6>
-									<p>LCD screens are uniquely modern in style, and the liquid crystals that make them work have <br> allowed humanity to create slimmer, more portable technology.</p>
-								</div>
-							</div>
-							<div class="item">
-								<img class="img-fluid" src="tema/img/why.jpg" alt="">
-								<div class="caption text-center mt-20">
-									<h6 class="text-uppercase">Vector Illustration</h6>
-									<p>LCD screens are uniquely modern in style, and the liquid crystals that make them work have <br> allowed humanity to create slimmer, more portable technology.</p>
-								</div>
-							</div>
-							<div class="item">
-								<img class="img-fluid" src="tema/img/why.jpg" alt="">
-								<div class="caption text-center mt-20">
-									<h6 class="text-uppercase">Vector Illustration</h6>
-									<p>LCD screens are uniquely modern in style, and the liquid crystals that make them work have <br> allowed humanity to create slimmer, more portable technology.</p>
-								</div>
-							</div>
-							<div class="item">
-								<img class="img-fluid" src="tema/img/why.jpg" alt="">
-								<div class="caption text-center mt-20">
-									<h6 class="text-uppercase">Vector Illustration</h6>
-									<p>LCD screens are uniquely modern in style, and the liquid crystals that make them work have <br> allowed humanity to create slimmer, more portable technology.</p>
-								</div>
-							</div>
-							<div class="item">
-								<img class="img-fluid" src="tema/img/why.jpg" alt="">
-								<div class="caption text-center mt-20">
-									<h6 class="text-uppercase">Vector Illustration</h6>
-									<p>LCD screens are uniquely modern in style, and the liquid crystals that make them work have <br> allowed humanity to create slimmer, more portable technology.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>	
-			</section>
-			<!-- End project Area -->
-
-
+			
 			<!-- Start feature Area -->
 			<section class="feature-area section-gap" id="secvice">
 				<div class="container">
 					<div class="row d-flex justify-content-center">
 						<div class="menu-content pb-60 col-lg-8">
 							<div class="title text-center">
-								<h1 class="mb-10">Some Features that Made us Unique</h1>
-								<p>Who are in extremely love with eco friendly system.</p>
+								<h1 class="mb-10">Beberapa Fasilitas Kami</h1>
+								<p>Fasilitas kami sangat Memadai untuk pengunjung</p>
 							</div>
 						</div>
 					</div>						
@@ -236,10 +165,10 @@ include "koneksi.php";
 							<div class="single-feature mb-30">
 								<div class="title d-flex flex-row pb-20">
 									<span class="lnr lnr-user"></span>
-									<h4><a href="#">Expert Technicians</a></h4>
+									<h4><a href="#">Mushola</a></h4>
 								</div>
 								<p>
-									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+									Terdapat Fasilitas Mushola yang nyaman dan bersih untuk beribadah bagi muslim.
 								</p>							
 							</div>							
 						</div>
@@ -247,10 +176,10 @@ include "koneksi.php";
 							<div class="single-feature mb-30">
 								<div class="title d-flex flex-row pb-20">
 									<span class="lnr lnr-license"></span>
-									<h4><a href="#">Professional Service</a></h4>
+									<h4><a href="#">Fasilitas Umum WC</a></h4>
 								</div>
 								<p>
-									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+									Tempat Wisata Kami juga terdapat wc umum yang sangat nyaman di pakai oleh pengunjung.
 								</p>							
 							</div>							
 						</div>
@@ -258,10 +187,10 @@ include "koneksi.php";
 							<div class="single-feature mb-30">
 								<div class="title d-flex flex-row pb-20">
 									<span class="lnr lnr-phone"></span>
-									<h4><a href="#">Great Support</a></h4>
+									<h4><a href="#">Wifi Gratis</a></h4>
 								</div>
 								<p>
-									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+									Terdapat Wifi Gratis Bagi pengujung yang sudah terinklun di booking tiket.
 								</p>							
 							</div>							
 						</div>
@@ -269,10 +198,10 @@ include "koneksi.php";
 							<div class="single-feature">
 								<div class="title d-flex flex-row pb-20">
 									<span class="lnr lnr-rocket"></span>
-									<h4><a href="#">Technical Skills</a></h4>
+									<h4><a href="#">Aula</a></h4>
 								</div>
 								<p>
-									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+									Tempat Wisata Kami terdapat Aula yang bisa di sewa untuk rapat bersama tamu undangan anda.
 								</p>							
 							</div>							
 						</div>
@@ -280,10 +209,10 @@ include "koneksi.php";
 							<div class="single-feature">
 								<div class="title d-flex flex-row pb-20">
 									<span class="lnr lnr-diamond"></span>
-									<h4><a href="#">Highly Recomended</a></h4>
+									<h4><a href="#">Warung Makan/ Kantin</a></h4>
 								</div>
 								<p>
-									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+									Tempat wisatakami menyedian kantin/warung yang bersih untuk pengujung makan bersama keluarga.
 								</p>							
 							</div>							
 						</div>
@@ -291,10 +220,10 @@ include "koneksi.php";
 							<div class="single-feature">
 								<div class="title d-flex flex-row pb-20">
 									<span class="lnr lnr-bubble"></span>
-									<h4><a href="#">Positive Reviews</a></h4>
+									<h4><a href="#">Pelampung</a></h4>
 								</div>
 								<p>
-									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+									Tempat wisata kami menyediakan Pelampung Renang bagi yang ingin menggunakan pelampung untuk berenang.
 								</p>							
 							</div>							
 						</div>																					
@@ -340,53 +269,34 @@ include "koneksi.php";
 					<div class="row d-flex justify-content-center">
 						<div class="menu-content pb-60 col-lg-8">
 							<div class="title text-center">
-								<h1 class="mb-10">Frequently Asked Questions</h1>
+								<h1 class="mb-10">yang sering di tanyakan pengunjung</h1>
 								<p>Who are in extremely love with eco friendly system.</p>
 							</div>
 						</div>
 					</div>							
-					<div class="row d-flex align-items-center">
-						<div class="counter-left col-lg-3 col-md-3">
-							<div class="single-facts">
-								<h2 class="counter">5962</h2>
-								<p>Projects Completed</p>							
-							</div>
-							<div class="single-facts">
-								<h2 class="counter">2394</h2>
-								<p>New Projects</p>							
-							</div>
-							<div class="single-facts">
-								<h2 class="counter">1439</h2>
-								<p>Tickets Submitted</p>							
-							</div>												
-							<div class="single-facts">
-								<h2 class="counter">933</h2>
-								<p>Cup of Coffee</p>							
-							</div>
-						</div>	
-						<div class="faq-content col-lg-9 col-md-9">
+				
+						<div class="faq-content col-lg-12 col-md-12">
 							<div class="single-faq">
 								<h2 class="text-uppercase">
-									Are your Templates responsive?
+									Berpa harga tiket masuk untuk pengunjung?
 								</h2>
 								<p>
-									“Few would argue that, despite the advancements of feminism over the past three decades, women still face a double standard when it comes to their behavior. While men’s borderline-inappropriate behavior.
+								tiket masuk dan parkir dengan harga yang terjangkau, sekitar Rp2 ribu untuk motor dan Rp5 ribu untuk mobil, serta tiket masuk untuk anak-anak Rp5 ribu dan dewasa Rp10 ribu</p>
+							</div>
+							<div class="single-faq">
+								<h2 class="text-uppercase">
+								Apakah ada paket atau diskon khusus untuk kelompok atau keluarga?
+								</h2>
+								<p>
+								untuk diskon pengujung kami belum nyediakan diskon khusus , tetapi jika tempat kami mau di sewa full kami menyediakan diskon khusus  agi penyewa
 								</p>
 							</div>
 							<div class="single-faq">
 								<h2 class="text-uppercase">
-									Does it have all the plugin as mentioned?
+									apakah bisa untuk acara pernikahan dan rapat khusus?
 								</h2>
 								<p>
-									“Few would argue that, despite the advancements of feminism over the past three decades, women still face a double standard when it comes to their behavior. While men’s borderline-inappropriate behavior.
-								</p>
-							</div>
-							<div class="single-faq">
-								<h2 class="text-uppercase">
-									Can i use the these theme for my client?
-								</h2>
-								<p>
-									“Few would argue that, despite the advancements of feminism over the past three decades, women still face a double standard when it comes to their behavior. While men’s borderline-inappropriate behavior.
+									tempat kami sudah tersida aual jadi memungkinkan sekali untuk di sewa untuk acara pernikahan ataupun untuk acara rapat khusus bahkan tempat kami bisa di sewa full day untuk acara khusus
 								</p>
 							</div>												
 						</div>									
@@ -395,21 +305,6 @@ include "koneksi.php";
 			</section>
 			<!-- End faq Area -->
 			
-			
-			<!-- Start Video Area -->
-			<section class="video-area pt-40 pb-40">
-				<div class="overlay overlay-bg"></div>
-				<div class="container">
-					<div class="video-content">
-						<a href="http://www.youtube.com/watch?v=0O2aH4XLbto" class="play-btn"><img src="tema/img/play-btn.png" alt=""></a>
-						<div class="video-desc">
-							<h3 class="h2 text-white text-uppercase">Being unique is the preference</h3>
-							<h4 class="text-white">Youtube video will appear in popover</h4>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- Start Video Area -->
 			
 			
 			<!-- Start logo Area -->
@@ -429,8 +324,8 @@ include "koneksi.php";
 					<div class="row d-flex justify-content-center">
 						<div class="menu-content pb-60 col-lg-8">
 							<div class="title text-center">
-								<h1 class="mb-10">If you need, Just drop us a line</h1>
-								<p>Who are in extremely love with eco friendly system.</p>
+								<h1 class="mb-10">KONTAK KAMI</h1>
+								<p>UNTUK MENGHUNGI KAMI BISA MELALU LINK DI BAWAH INI</p>
 							</div>
 						</div>
 					</div>										

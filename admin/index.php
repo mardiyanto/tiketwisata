@@ -72,11 +72,11 @@
 
       <header class="main-header">
         <!-- Logo -->
-        <a href="index.aspx" class="logo">
+        <a href="index.php" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>A</b>SET</span>
+          <span class="logo-mini"><?php echo"$k_k[alias]";?></span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg">SI ASET</span>
+          <span class="logo-lg"><?php echo"$k_k[alias]";?></span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">

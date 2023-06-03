@@ -21,8 +21,8 @@
                </a>
                <ul class='treeview-menu'>
                 <li><a href='index.php?aksi=tiket'><i class='fa fa-arrows-h'></i>Tiket</a></li>
-                <li><a href='index.php?aksi=admin'><i class='fa fa-arrows-h'></i>booking Tiket</a></li>
-                <li><a href='index.php?aksi=admin'><i class='fa fa-arrows-h'></i>konsumen</a></li>
+                <li><a href='index.php?aksi=booking'><i class='fa fa-arrows-h'></i>booking Tiket</a></li>
+                <li><a href='index.php?aksi=pengunjung'><i class='fa fa-arrows-h'></i>pengunjung</a></li>
                </ul>
  </li>                 
       <li>      
