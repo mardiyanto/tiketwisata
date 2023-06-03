@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Jun 2023 pada 08.54
--- Versi server: 10.1.34-MariaDB
--- Versi PHP: 5.6.37
+-- Generation Time: 03 Jun 2023 pada 18.16
+-- Versi Server: 10.1.25-MariaDB
+-- PHP Version: 5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `booking` (
   `id_booking` int(25) NOT NULL,
   `kode_booking` varchar(100) NOT NULL,
-  `id_konsumen` int(10) NOT NULL,
+  `id_pengunjung` int(10) NOT NULL,
   `id_tiket` varchar(100) NOT NULL,
   `harga` varchar(20) NOT NULL,
   `jml` varchar(10) NOT NULL,
@@ -39,19 +39,33 @@ CREATE TABLE `booking` (
   `ket` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `booking`
+--
+
+INSERT INTO `booking` (`id_booking`, `kode_booking`, `id_pengunjung`, `id_tiket`, `harga`, `jml`, `nm_bk`, `ket`) VALUES
+(1, '0TN1ALU7C9XVC', 1, '1', '', '2', '', '');
+
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `konsumen`
+-- Struktur dari tabel `pengunjung`
 --
 
-CREATE TABLE `konsumen` (
-  `id_konsumen` int(10) NOT NULL,
-  `nama_konsumen` varchar(50) NOT NULL,
-  `email_konsumen` varchar(32) NOT NULL,
+CREATE TABLE `pengunjung` (
+  `id_pengunjung` int(10) NOT NULL,
+  `nama_pengunjung` varchar(50) NOT NULL,
+  `email_pengunjung` varchar(32) NOT NULL,
   `no_hp` varchar(18) NOT NULL,
   `alamat` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `pengunjung`
+--
+
+INSERT INTO `pengunjung` (`id_pengunjung`, `nama_pengunjung`, `email_pengunjung`, `no_hp`, `alamat`) VALUES
+(1, 'AKABEST', 'mardybest@gmail.com', '08234758674', 'Jl wismarini no 09 Pringsewu');
 
 -- --------------------------------------------------------
 
@@ -76,7 +90,7 @@ CREATE TABLE `profil` (
 --
 
 INSERT INTO `profil` (`id_profil`, `nama_app`, `tahun`, `nama`, `alias`, `alamat`, `isi`, `gambar`, `akabest`) VALUES
-(1, 'TIET', '2022/2023', 'SDAG', 'IBN', 'JL Wismarini No 09 Pringsewu Lampung', '', '18102022034029.jpg', 'mardybest@gmail.com'),
+(1, 'TIET', '2022/2023', 'SDAG', 'E-TIKET', 'JL Wismarini No 09 Pringsewu Lampung', '', '18102022034029.jpg', 'mardybest@gmail.com'),
 (2, 're', '', 'MARDIYANTO', '19081989578978975', '', '', '', '');
 
 -- --------------------------------------------------------
@@ -128,69 +142,64 @@ INSERT INTO `user` (`user_id`, `user_nama`, `user_username`, `user_password`, `u
 --
 
 --
--- Indeks untuk tabel `booking`
+-- Indexes for table `booking`
 --
 ALTER TABLE `booking`
   ADD PRIMARY KEY (`id_booking`);
 
 --
--- Indeks untuk tabel `konsumen`
+-- Indexes for table `pengunjung`
 --
-ALTER TABLE `konsumen`
-  ADD PRIMARY KEY (`id_konsumen`);
+ALTER TABLE `pengunjung`
+  ADD PRIMARY KEY (`id_pengunjung`);
 
 --
--- Indeks untuk tabel `profil`
+-- Indexes for table `profil`
 --
 ALTER TABLE `profil`
   ADD PRIMARY KEY (`id_profil`);
 
 --
--- Indeks untuk tabel `tiket`
+-- Indexes for table `tiket`
 --
 ALTER TABLE `tiket`
   ADD PRIMARY KEY (`id_tiket`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `booking`
+-- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id_booking` int(25) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id_booking` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT untuk tabel `konsumen`
+-- AUTO_INCREMENT for table `pengunjung`
 --
-ALTER TABLE `konsumen`
-  MODIFY `id_konsumen` int(10) NOT NULL AUTO_INCREMENT;
-
+ALTER TABLE `pengunjung`
+  MODIFY `id_pengunjung` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT untuk tabel `profil`
+-- AUTO_INCREMENT for table `profil`
 --
 ALTER TABLE `profil`
   MODIFY `id_profil` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
--- AUTO_INCREMENT untuk tabel `tiket`
+-- AUTO_INCREMENT for table `tiket`
 --
 ALTER TABLE `tiket`
   MODIFY `id_tiket` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-COMMIT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

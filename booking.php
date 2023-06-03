@@ -1,224 +1,212 @@
 <!DOCTYPE html>
-	<html lang="zxx" class="no-js">
-	<head>
-		<!-- Mobile Specific Meta -->
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- Favicon-->
-		<link rel="shortcut icon" href="img/elements/fav.png">
-		<!-- Author Meta -->
-		<meta name="author" content="CodePixar">
-		<!-- Meta Description -->
-		<meta name="description" content="">
-		<!-- Meta Keyword -->
-		<meta name="keywords" content="">
-		<!-- meta character set -->
-		<meta charset="UTF-8">
-		<!-- Site Title -->
-		<title>Adventure</title>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 2 | Top Navigation</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="sys/bootstrap/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="sys/bootstrap/dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="sys/bootstrap/dist/css/skins/_all-skins.min.css">
 
-		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
-			<!--
-			CSS
-			============================================= -->
-			<link rel="stylesheet" href="tema/css/linearicons.css">
-			<link rel="stylesheet" href="tema/css/owl.carousel.css">
-			<link rel="stylesheet" href="tema/css/font-awesome.min.css">
-			<link rel="stylesheet" href="tema/css/nice-select.css">			
-			<link rel="stylesheet" href="tema/css/magnific-popup.css">
-			<link rel="stylesheet" href="tema/css/bootstrap.css">
-			<link rel="stylesheet" href="tema/css/main.css">
-		</head>
-		<body>
-			<!-- Start banner Area -->
-			<section class="generic-banner relative">
-			<!-- Start Header Area -->
-				<header class="default-header">
-					<nav class="navbar navbar-expand-lg  navbar-light">
-						<div class="container">
-							  <a class="navbar-brand" href="index.html">
-							  	<img src="img/logo.png" alt="">
-							  </a>
-							  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-							    <span class="text-white lnr lnr-menu"></span>
-							  </button>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+  <body class="hold-transition skin-blue layout-top-nav">
+    <div class="wrapper">
 
-							  <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
-							    <ul class="navbar-nav">
-									<li><a href="index.html#home">Home</a></li>
-									<li><a href="index.html#about">About</a></li>									
-									<li><a href="index.html#secvice">Service</a></li>
-									<li><a href="index.html#gallery">Gallery</a></li>
-									<li><a href="index.html#faq">Faq</a></li>
-									<li><a href="index.html#contact">Contact</a></li>
-									<!-- Dropdown -->
-								    <li class="dropdown">
-								      <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-								        Pages
-								      </a>
-								      <div class="dropdown-menu">
-								        <a class="dropdown-item" href="generic.html">Generic</a>
-								        <a class="dropdown-item" href="elements.html">Elements</a>
-								      </div>
-								    </li>
-							    </ul>
-							  </div>						
-						</div>
-					</nav>
-				</header>
-			<!-- End Header Area -->				
+      <header class="main-header">
+        <nav class="navbar navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <a href="sys/bootstrap/index2.html" class="navbar-brand"><b>Admin</b>LTE</a>
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                <i class="fa fa-bars"></i>
+              </button>
+            </div>
 
-			</section>		
-			<!-- End banner Area -->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="index.php">beranda <span class="sr-only">(current)</span></a></li>
+     
+              </ul>
+              <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="navbar-search-input" placeholder="Search">
+                </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+            <!-- Navbar Right Menu -->
+              <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+    
 
-		
-			<!-- Start Align Area -->
-			<div class="whole-wrap">
-				<div class="container">
-					<div class="section-top-border">
-						<div class="row">
-							<div class="col-lg-12 col-md-12">
-								<h3 class="mb-30">Form Element</h3>
-								<form action="#">
-									<div class="mt-10">
-										<input type="text" name="first_name" placeholder="First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'" required class="single-input">
-									</div>
-									<div class="mt-10">
-										<input type="text" name="last_name" placeholder="Last Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'" required class="single-input">
-									</div>
-									<div class="mt-10">
-										<input type="text" name="last_name" placeholder="Last Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'" required class="single-input">
-									</div>
-									<div class="mt-10">
-										<input type="email" name="EMAIL" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required class="single-input">
-									</div>
-									<div class="input-group-icon mt-10">
-										<div class="icon"><i class="fa fa-thumb-tack" aria-hidden="true"></i></div>
-										<input type="text" name="address" placeholder="Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Address'" required class="single-input">
-									</div>
-									<div class="input-group-icon mt-10">
-										<div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
-										<div class="form-select" id="default-select"">
-											<select>
-												<option value="1">City</option>
-												<option value="1">Dhaka</option>
-												<option value="1">Dilli</option>
-												<option value="1">Newyork</option>
-												<option value="1">Islamabad</option>
-											</select>
-										</div>
-									</div>
-									<div class="input-group-icon mt-10">
-										<div class="icon"><i class="fa fa-globe" aria-hidden="true"></i></div>
-										<div class="form-select" id="default-select"">
-											<select>
-												<option value="1">Country</option>
-												<option value="1">Bangladesh</option>
-												<option value="1">India</option>
-												<option value="1">England</option>
-												<option value="1">Srilanka</option>
-											</select>
-										</div>
-									</div>
-									
-									<div class="mt-10">
-										<textarea class="single-textarea" placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Message'" required></textarea>
-									</div>
-									<!-- For Gradient Border Use -->
-									<!-- <div class="mt-10">
-										<div class="primary-input">
-											<input id="primary-input" type="text" name="first_name" placeholder="Primary color" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Primary color'">
-											<label for="primary-input"></label>
-										</div>
-									</div> -->
-									<div class="mt-10">
-										<input type="text" name="first_name" placeholder="Primary color" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Primary color'" required class="single-input-primary">
-									</div>
-									<div class="mt-10">
-										<input type="text" name="first_name" placeholder="Accent color" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Accent color'" required class="single-input-accent">
-									</div>
-									<div class="mt-10">
-										<input type="text" name="first_name" placeholder="Secondary color" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Secondary color'" required class="single-input-secondary">
-									</div>
-								</form>
-							</div>
-							
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- End Align Area -->
+     
+     
+                  <!-- User Account Menu -->
+                  <li class="dropdown user user-menu">
+                    <!-- Menu Toggle Button -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <!-- The user image in the navbar-->
+                      <img src="sys/bootstrap/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                      <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                      <span class="hidden-xs">Alexander Pierce</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <!-- The user image in the menu -->
+                      <li class="user-header">
+                        <img src="sys/bootstrap/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <p>
+                          Alexander Pierce - Web Developer
+                          <small>Member since Nov. 2012</small>
+                        </p>
+                      </li>
+                      <!-- Menu Body -->
+                      <li class="user-body">
+                        <div class="col-xs-4 text-center">
+                          <a href="#">Followers</a>
+                        </div>
+                        <div class="col-xs-4 text-center">
+                          <a href="#">Sales</a>
+                        </div>
+                        <div class="col-xs-4 text-center">
+                          <a href="#">Friends</a>
+                        </div>
+                      </li>
+                      <!-- Menu Footer-->
+                      <li class="user-footer">
+                        <div class="pull-left">
+                          <a href="#" class="btn btn-default btn-flat">Profile</a>
+                        </div>
+                        <div class="pull-right">
+                          <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div><!-- /.navbar-custom-menu -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </header>
+      <!-- Full Width Column -->
+      <div class="content-wrapper">
+        <div class="container">
+          <!-- Content Header (Page header) -->
 
 
-			<!-- start footer Area -->		
-			<footer class="footer-area section-gap">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-5 col-md-6 col-sm-6">
-							<div class="single-footer-widget">
-								<h6>About Us</h6>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.
-								</p>
+          <!-- Main content -->
+          <section class="content">
+          <h2 class="page-header">Harga Peket Wisata dan Register</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="box box-solid">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Harga</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <div class="box-group" id="accordion">
+                    <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
+                    <div class="panel box box-primary">
+                      <div class="box-header with-border">
+                        <h4 class="box-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                           harga tiket untuk masuk 
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="box-body">
+                          Harga Tiket masuk Kami adalah untuk dewasa Rp.10.000 dan Untuk Anak-Anak Rp.5.000
+                        </div>
+                      </div>
+                    </div>
+            
+                  </div>
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+            </div><!-- /.col -->
+            <div class="col-md-6">
+              <div class="box box-solid">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Isikan Data Anda untuk Booking</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+				<form action="../../index.html" method="post">
+          <div class="form-group has-feedback">
+            <input type="text" class="form-control" placeholder="Full name">
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback">
+            <input type="email" class="form-control" placeholder="Email">
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback">
+            <input type="password" class="form-control" placeholder="Password">
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback">
+            <input type="password" class="form-control" placeholder="Retype password">
+            <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+          </div>
+          <div class="row">
+            <div class="col-xs-8">
+              <div class="checkbox icheck">
+                <label>
+                  
+                </label>
+              </div>
+            </div><!-- /.col -->
+            <div class="col-xs-4">
+              <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
+            </div><!-- /.col -->
+          </div>
+        </form>
 
-								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            		<p class="footer-text">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
-            		<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+          <!-- END ACCORDION & CAROUSEL-->
+          </section><!-- /.content -->
+        </div><!-- /.container -->
+      </div><!-- /.content-wrapper -->
+      <footer class="main-footer">
+        <div class="container">
+          <div class="pull-right hidden-xs">
+            <b>Version</b> 2.3.0
+          </div>
+          <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved.
+        </div><!-- /.container -->
+      </footer>
+    </div><!-- ./wrapper -->
 
-							</div>
-						</div>
-						<div class="col-lg-5  col-md-6 col-sm-6">
-							<div class="single-footer-widget">
-								<h6>Newsletter</h6>
-								<p>Stay update with our latest</p>
-								<div class="" id="mc_embed_signup">
-
-										<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
-
-										<div class="d-flex flex-row">
-
-											<input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
-
-
-				                            	<button class="click-btn btn btn-default"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
-				                            	<div style="position: absolute; left: -5000px;">
-													<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-												</div>
-				                          	
-											<!-- <div class="col-lg-4 col-md-4">
-												<button class="bb-btn btn"><span class="lnr lnr-arrow-right"></span></button>
-											</div>  -->
-										</div>		
-										<div class="info"></div>
-										</form>
-								</div>
-								</div>
-						</div>						
-						<div class="col-lg-2 col-md-6 col-sm-6 social-widget">
-							<div class="single-footer-widget">
-								<h6>Follow Us</h6>
-								<p>Let us be social</p>
-								<div class="footer-social d-flex align-items-center">
-									<a href="#"><i class="fa fa-facebook"></i></a>
-									<a href="#"><i class="fa fa-twitter"></i></a>
-									<a href="#"><i class="fa fa-dribbble"></i></a>
-									<a href="#"><i class="fa fa-behance"></i></a>
-								</div>
-							</div>
-						</div>							
-					</div>
-				</div>
-			</footer>	
-			<!-- End footer Area -->		
-
-
-			<script src="tema/js/vendor/jquery-2.2.4.min.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.tema/js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-			<script src="tema/js/vendor/bootstrap.min.js"></script>
-			<script src="tema/js/owl.carousel.min.js"></script>
-			<script src="tema/js/jquery.sticky.js"></script>
-			<script src="tema/js/jquery.nice-select.min.js"></script>			
-			<script src="tema/js/parallax.min.js"></script>
-			<script src="tema/js/jquery.magnific-popup.min.js"></script>
-			<script src="tema/js/main.js"></script>	
-		</body>
-	</html>
+    <!-- jQuery 2.1.4 -->
+    <script src="sys/bootstrap/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="sys/bootstrap/bootstrap/js/bootstrap.min.js"></script>
+    <!-- SlimScroll -->
+    <script src="sys/bootstrap/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="sys/bootstrap/plugins/fastclick/fastclick.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="sys/bootstrap/dist/js/app.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="sys/bootstrap/dist/js/demo.js"></script>
+  </body>
+</html>

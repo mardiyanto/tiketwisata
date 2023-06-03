@@ -73,7 +73,7 @@ include "koneksi.php";
 										<h1 class="text-uppercase text-white">New Adventure</h1>
 										<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp <br>
 										or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
-										<a href="#" class="text-uppercase header-btn">PESAN TIKET SEKARANG</a>
+										<a href="booking.php" class="text-uppercase header-btn">PESAN TIKET SEKARANG</a>
 									</div>
 								</div>
 
@@ -90,7 +90,7 @@ include "koneksi.php";
 										<h1 class="text-uppercase text-white">New Trip</h1>
 										<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp <br>
 										or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
-										<a href="#" class="text-uppercase header-btn">PESAN TIKET SEKARANG</a>
+										<a href="booking.php" class="text-uppercase header-btn">PESAN TIKET SEKARANG</a>
 									</div>
 								</div>
 							</div>
@@ -106,7 +106,7 @@ include "koneksi.php";
 										<h1 class="text-uppercase text-white">New Experience</h1>
 										<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp <br>
 										or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
-										<a href="#" class="text-uppercase header-btn">PESAN TIKET SEKARANG</a>
+										<a href="booking.php" class="text-uppercase header-btn">PESAN TIKET SEKARANG</a>
 									</div>
 								</div>
 							</div>
