@@ -2,209 +2,528 @@
 $tanggal=date("Y");
 include "koneksi.php";
 ?>
-<!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+	<!DOCTYPE html>
+	<html lang="zxx" class="no-js">
 	<head>
+		<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="tema/img/fav.png">
+		<!-- Author Meta -->
+		<meta name="author" content="colorlib">
+		<!-- Meta Description -->
+		<meta name="description" content="">
+		<!-- Meta Keyword -->
+		<meta name="keywords" content="">
+		<!-- meta character set -->
+		<meta charset="UTF-8">
+		<!-- Site Title -->
 		<title><?php echo"$k_k[nama]";?></title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="tema/assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="tema/assets/css/noscript.css" /></noscript>
-		<style type="text/css">
-				#bg:after {
-			-moz-transform: scale(1.125);
-			-webkit-transform: scale(1.125);
-			-ms-transform: scale(1.125);
-			transform: scale(1.125);
-			-moz-transition: -moz-transform 0.325s ease-in-out, -moz-filter 0.325s ease-in-out;
-			-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
-			-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
-			transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-			background-image: url("foto/<?php echo"$k_k[gambar]";?>");
-			background-position: center;
-			background-size: cover;
-			background-repeat: no-repeat;
-			z-index: 1;
-		}
 
-       </style>	
-	</head>
-	<body class="is-preload">
-		<!-- Wrapper -->
-			<div id="wrapper">
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<span class="icon fa-gem"></span>
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+			<!--
+			CSS
+			============================================= -->
+			<link rel="stylesheet" href="tema/css/linearicons.css">
+			<link rel="stylesheet" href="tema/css/font-awesome.min.css">
+			<link rel="stylesheet" href="tema/css/bootstrap.css">
+			<link rel="stylesheet" href="tema/css/magnific-popup.css">
+			<link rel="stylesheet" href="tema/css/animate.min.css">
+			<link rel="stylesheet" href="tema/css/owl.carousel.css">
+			<link rel="stylesheet" href="tema/css/main.css">
+		</head>
+		<body>
+			<!-- start banner Area -->
+			<section class="banner-area" id="home">
+				<!-- Start Header Area -->
+				<header class="default-header">
+					<nav class="navbar navbar-expand-lg  navbar-light">
+						<div class="container">
+							  <a class="navbar-brand" href="index.php">
+							  	<img src="tema/img/logo.png" alt="">
+							  </a>
+							  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							    <span class="text-white lnr lnr-menu"></span>
+							  </button>
+
+							  <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
+							    <ul class="navbar-nav">
+									<li><a href="#home">Home</a></li>
+									<li><a href="#about">About</a></li>									
+									<li><a href="#secvice">Service</a></li>
+									<li><a href="#gallery">Gallery</a></li>
+									<li><a href="#faq">Faq</a></li>
+									<li><a href="#contact">Contact</a></li>
+									<!-- Dropdown -->
+								    <li class="dropdown">
+								      <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+								        Pages
+								      </a>
+								      <div class="dropdown-menu">
+								        <a class="dropdown-item" href="generic.html">Generic</a>
+								        <a class="dropdown-item" href="elements.html">Elements</a>
+								      </div>
+								    </li>
+							    </ul>
+							  </div>						
 						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>SELAMAT DATANG</h1>
-								<h3>SI <?php echo"$k_k[nama_app]";?> <?php echo"$k_k[alias]";?> </h3><p>Satu Aplikasi Untuk Kemudahan Implementasi P-D-C-A <?php echo"$k_k[nama]";?></p>
-												<?php 
-        if(isset($_GET['alert'])){
-          if($_GET['alert'] == "gagal"){
-            echo "<div class='alert alert-danger'>LOGIN GAGAL! USERNAME DAN PASSWORD SALAH!</div>";
-          }else if($_GET['alert'] == "logout"){
-            echo "<div class='alert alert-success'>ANDA TELAH BERHASIL LOGOUT</div>";
-          }else if($_GET['alert'] == "belum_login"){
-            echo "<div class='alert alert-warning'>ANDA HARUS LOGIN UNTUK MENGAKSES DASHBOARD</div>";
-          }
-        }
-        ?>
+					</nav>
+				</header>
+				<!-- End Header Area -->				
+			</section>
+
+			<section class="default-banner active-blog-slider">
+					<div class="item-slider relative" style="background: url(tema/img/slider1.jpg);background-size: cover;">
+						<div class="overlay" style="background: rgba(0,0,0,.3)"></div>
+						<div class="container">
+							<div class="row fullscreen justify-content-center align-items-center">
+								<div class="col-md-10 col-12">
+									<div class="banner-content text-center">
+										<h4 class="text-white mb-20 text-uppercase">Discover the Colorful World</h4>
+										<h1 class="text-uppercase text-white">New Adventure</h1>
+										<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp <br>
+										or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+										<a href="#" class="text-uppercase header-btn">Discover Now</a>
+									</div>
+								</div>
+
 							</div>
 						</div>
-						<nav>
-							<ul>
-								<li><a href="#intro">LOGIN</a></li>
-								<li><a href="#contact">Hubungi</a></li>
-								<!--<li><a href="#work">PELAYANAN</a></li>
-								<li><a href="#pegawai">PEGAWAI</a></li>
-								<li><a href="#about">Tentang</a></li>
-								
-								<li><a href="#elements">Elements</a></li>-->
-							</ul>
-						</nav>
-					</header>
-
-				<!-- Main -->
-					<div id="main">
-
-						<!-- Intro -->
-							<article id="intro">
-			
-								<h2 class="major">LOGIN ADMEN</h2>
-						<form method="post" action="periksa_login.php">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">User Name</label>
-											<input type="text" placeholder="Username" name="username" required="required" autocomplete="off" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Password</label>
-											<input  type="password"  placeholder="Password" name="password" required="required" autocomplete="off" id="email" />
-										</div>
-											<div class="field">
-												<label for="demo-category">Login Sebagai</label>
-												<select  id="demo-category" name="sebagai" required="required">
-													<option value="">- Pilih Login -</option>
-													<option value="administrator">ADMIN</option>
-													<option value="pegawai">PEGAWAI</option>
-												</select>
-											</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="login" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
-								</article>
-
-						<!-- Work -->
-							<article id="work">
-								<h2 class="major">LOGIN UKP DAN UKM</h2>
-									<form method="post" action="periksa_login.php">
-									<div class="fields">
-										<div class="field">
-											<label for="name">User Name</label>
-											<input type="text" placeholder="Username" name="username" required="required" autocomplete="off" id="name" />
-										</div>
-										<div class="field">
-											<label for="email">Password</label>
-											<input  type="password"  placeholder="Password" name="password" required="required" autocomplete="off" id="email" />
-										</div>
-											<div class="field">
-												<label for="demo-category">Category</label>
-												<select  id="demo-category" name="sebagai" required="required">
-													<option value="">- Pilih -</option>
-													<option value="ukm">UKM</option>
-													<option value="ukp">UKP</option>
-												</select>
-											</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="login" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
-								</article>
-							<article id="pegawai">
-								<h2 class="major">LOGIN PEGAWAI</h2>
-								<p> <?php echo"$k_k[nama]";?></p>
-						<form method="post" action="periksa_login.php">
-									<div class="fields">
-										<div class="field half">
-										<input type="hidden" name="sebagai" value="pegawai"/>
-											<label for="name">User Name</label>
-											<input type="text" placeholder="Username" name="username" required="required" autocomplete="off" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Password</label>
-											<input  type="password"  placeholder="Password" name="password" required="required" autocomplete="off" id="email" />
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="login" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
-								</article>
-						<!-- About -->
-							<article id="about">
-								<h2 class="major">About</h2>
-								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
-								<p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
-							</article>
-
-						<!-- Contact -->
-							<article id="contact">
-								<h2 class="major">Contact</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="4"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
-								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</article>
 					</div>
-				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy; <?php echo"$k_k[nama]";?> <?php echo"$tanggal";?></p>
-					</footer>
-			</div>
-		<!-- BG -->
-			<div id="bg"></div>
-		<!-- Scripts -->
-			<script src="tema/assets/js/jquery.min.js"></script>
-			<script src="tema/assets/js/browser.min.js"></script>
-			<script src="tema/assets/js/breakpoints.min.js"></script>
-			<script src="tema/assets/js/util.js"></script>
-			<script src="tema/assets/js/main.js"></script>
+					<div class="item-slider relative" style="background: url(tema/img/slider2.jpg);background-size: cover;">
+						<div class="overlay" style="background: rgba(0,0,0,.3)"></div>
+						<div class="container">
+							<div class="row fullscreen justify-content-center align-items-center">
+								<div class="col-md-10 col-12">
+									<div class="banner-content text-center">
+										<h4 class="text-white mb-20 text-uppercase">Discover the Colorful World</h4>
+										<h1 class="text-uppercase text-white">New Trip</h1>
+										<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp <br>
+										or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+										<a href="#" class="text-uppercase header-btn">Discover Now</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item-slider relative" style="background: url(tema/img/slider3.jpg);background-size: cover;">
+						<div class="overlay" style="background: rgba(0,0,0,.3)"></div>
+						<div class="container">
+							<div class="row fullscreen justify-content-center align-items-center">
+								<div class="col-md-10 col-12">
+									<div class="banner-content text-center">
+										<h4 class="text-white mb-20 text-uppercase">Discover the Colorful World</h4>
+										<h1 class="text-uppercase text-white">New Experience</h1>
+										<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp <br>
+										or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+										<a href="#" class="text-uppercase header-btn">Discover Now</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
 
-	</body>
-</html>
+			<!-- Start about Area -->
+			<section class="section-gap info-area" id="about">
+				<div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-40 col-lg-8">
+							<div class="title text-center">
+								<h1 class="mb-10">Why Choose Us Your Fitness Builder</h1>
+								<p>Who are in extremely love with eco friendly system.</p>
+							</div>
+						</div>
+					</div>					
+					<div class="single-info row mt-40">
+						<div class="col-lg-6 col-md-12 mt-120 text-center no-padding info-left">
+							<div class="info-thumb">
+								<img src="tema/img/about-img.jpg" class="img-fluid" alt="">
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-12 no-padding info-rigth">
+							<div class="info-content">
+								<h2 class="pb-30">We Realize that <br>
+								there are reduced <br>
+								Wastege Stand out</h2>
+								<p>
+									inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards – especially in the workplace. That’s why it’s crucial that, as women.									
+								</p>
+								<br>
+								<p>
+									inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards – especially in the workplace. That’s why it’s crucial that, as women. inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards – especially in the workplace. That’s why it’s crucial that, as women.									
+								</p>
+								<br>
+								<p>
+									inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards – especially in the workplace. That’s why it’s crucial that, as women.
+								</p>
+								</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End about Area -->
+			
+			
+			<!-- Start project Area -->
+			<section class="project-area section-gap" id="project">
+				<div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-30 col-lg-8">
+							<div class="title text-center">
+								<h1 class="mb-10">Latest Project on the go</h1>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> labore  et dolore magna aliqua.</p>
+							</div>
+						</div>
+					</div>						
+					<div class="row justify-content-center d-flex">
+						<div class="active-works-carousel mt-40 col-lg-8">
+							<div class="item">
+								<img class="img-fluid" src="tema/img/why.jpg" alt="">
+								<div class="caption text-center mt-20">
+									<h6 class="text-uppercase">Vector Illustration</h6>
+									<p>LCD screens are uniquely modern in style, and the liquid crystals that make them work have <br> allowed humanity to create slimmer, more portable technology.</p>
+								</div>
+							</div>
+							<div class="item">
+								<img class="img-fluid" src="tema/img/why.jpg" alt="">
+								<div class="caption text-center mt-20">
+									<h6 class="text-uppercase">Vector Illustration</h6>
+									<p>LCD screens are uniquely modern in style, and the liquid crystals that make them work have <br> allowed humanity to create slimmer, more portable technology.</p>
+								</div>
+							</div>
+							<div class="item">
+								<img class="img-fluid" src="tema/img/why.jpg" alt="">
+								<div class="caption text-center mt-20">
+									<h6 class="text-uppercase">Vector Illustration</h6>
+									<p>LCD screens are uniquely modern in style, and the liquid crystals that make them work have <br> allowed humanity to create slimmer, more portable technology.</p>
+								</div>
+							</div>
+							<div class="item">
+								<img class="img-fluid" src="tema/img/why.jpg" alt="">
+								<div class="caption text-center mt-20">
+									<h6 class="text-uppercase">Vector Illustration</h6>
+									<p>LCD screens are uniquely modern in style, and the liquid crystals that make them work have <br> allowed humanity to create slimmer, more portable technology.</p>
+								</div>
+							</div>
+							<div class="item">
+								<img class="img-fluid" src="tema/img/why.jpg" alt="">
+								<div class="caption text-center mt-20">
+									<h6 class="text-uppercase">Vector Illustration</h6>
+									<p>LCD screens are uniquely modern in style, and the liquid crystals that make them work have <br> allowed humanity to create slimmer, more portable technology.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</section>
+			<!-- End project Area -->
+
+
+			<!-- Start feature Area -->
+			<section class="feature-area section-gap" id="secvice">
+				<div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-60 col-lg-8">
+							<div class="title text-center">
+								<h1 class="mb-10">Some Features that Made us Unique</h1>
+								<p>Who are in extremely love with eco friendly system.</p>
+							</div>
+						</div>
+					</div>						
+					<div class="row">
+						<div class="col-lg-4 col-md-6 ">
+							<div class="single-feature mb-30">
+								<div class="title d-flex flex-row pb-20">
+									<span class="lnr lnr-user"></span>
+									<h4><a href="#">Expert Technicians</a></h4>
+								</div>
+								<p>
+									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+								</p>							
+							</div>							
+						</div>
+						<div class="col-lg-4 col-md-6 ">
+							<div class="single-feature mb-30">
+								<div class="title d-flex flex-row pb-20">
+									<span class="lnr lnr-license"></span>
+									<h4><a href="#">Professional Service</a></h4>
+								</div>
+								<p>
+									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+								</p>							
+							</div>							
+						</div>
+						<div class="col-lg-4 col-md-6 ">
+							<div class="single-feature mb-30">
+								<div class="title d-flex flex-row pb-20">
+									<span class="lnr lnr-phone"></span>
+									<h4><a href="#">Great Support</a></h4>
+								</div>
+								<p>
+									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+								</p>							
+							</div>							
+						</div>
+						<div class="col-lg-4 col-md-6 ">
+							<div class="single-feature">
+								<div class="title d-flex flex-row pb-20">
+									<span class="lnr lnr-rocket"></span>
+									<h4><a href="#">Technical Skills</a></h4>
+								</div>
+								<p>
+									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+								</p>							
+							</div>							
+						</div>
+						<div class="col-lg-4 col-md-6 ">
+							<div class="single-feature">
+								<div class="title d-flex flex-row pb-20">
+									<span class="lnr lnr-diamond"></span>
+									<h4><a href="#">Highly Recomended</a></h4>
+								</div>
+								<p>
+									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+								</p>							
+							</div>							
+						</div>
+						<div class="col-lg-4 col-md-6 ">
+							<div class="single-feature">
+								<div class="title d-flex flex-row pb-20">
+									<span class="lnr lnr-bubble"></span>
+									<h4><a href="#">Positive Reviews</a></h4>
+								</div>
+								<p>
+									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+								</p>							
+							</div>							
+						</div>																					
+					</div>
+				</div>	
+			</section>
+			<!-- End feature Area -->
+
+
+			<!-- Start gallery Area -->
+			<section class="gallery-area" id="gallery">
+				<div class="container-fluid">
+					<div class="row no-padding">
+						<div class="active-gallery">
+							<div class="item single-gallery">
+								<img src="tema/img/g1.jpg" alt="">
+							</div>	
+							<div class="item single-gallery">
+								<img src="tema/img/g2.jpg" alt="">
+							</div>	
+							<div class="item single-gallery">
+								<img src="tema/img/g3.jpg" alt="">
+							</div>	
+							<div class="item single-gallery">
+								<img src="tema/img/g4.jpg" alt="">
+							</div>	
+							<div class="item single-gallery">
+								<img src="tema/img/g5.jpg" alt="">
+							</div>	
+							<div class="item single-gallery">
+								<img src="tema/img/g6.jpg" alt="">
+							</div>																		
+						</div>
+					</div>
+				</div>	
+			</section>
+			<!-- End gallery Area -->
+			
+			
+			<!-- Start faq Area -->
+			<section class="faq-area section-gap" id="faq">
+				<div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-60 col-lg-8">
+							<div class="title text-center">
+								<h1 class="mb-10">Frequently Asked Questions</h1>
+								<p>Who are in extremely love with eco friendly system.</p>
+							</div>
+						</div>
+					</div>							
+					<div class="row d-flex align-items-center">
+						<div class="counter-left col-lg-3 col-md-3">
+							<div class="single-facts">
+								<h2 class="counter">5962</h2>
+								<p>Projects Completed</p>							
+							</div>
+							<div class="single-facts">
+								<h2 class="counter">2394</h2>
+								<p>New Projects</p>							
+							</div>
+							<div class="single-facts">
+								<h2 class="counter">1439</h2>
+								<p>Tickets Submitted</p>							
+							</div>												
+							<div class="single-facts">
+								<h2 class="counter">933</h2>
+								<p>Cup of Coffee</p>							
+							</div>
+						</div>	
+						<div class="faq-content col-lg-9 col-md-9">
+							<div class="single-faq">
+								<h2 class="text-uppercase">
+									Are your Templates responsive?
+								</h2>
+								<p>
+									“Few would argue that, despite the advancements of feminism over the past three decades, women still face a double standard when it comes to their behavior. While men’s borderline-inappropriate behavior.
+								</p>
+							</div>
+							<div class="single-faq">
+								<h2 class="text-uppercase">
+									Does it have all the plugin as mentioned?
+								</h2>
+								<p>
+									“Few would argue that, despite the advancements of feminism over the past three decades, women still face a double standard when it comes to their behavior. While men’s borderline-inappropriate behavior.
+								</p>
+							</div>
+							<div class="single-faq">
+								<h2 class="text-uppercase">
+									Can i use the these theme for my client?
+								</h2>
+								<p>
+									“Few would argue that, despite the advancements of feminism over the past three decades, women still face a double standard when it comes to their behavior. While men’s borderline-inappropriate behavior.
+								</p>
+							</div>												
+						</div>									
+					</div>
+				</div>
+			</section>
+			<!-- End faq Area -->
+			
+			
+			<!-- Start Video Area -->
+			<section class="video-area pt-40 pb-40">
+				<div class="overlay overlay-bg"></div>
+				<div class="container">
+					<div class="video-content">
+						<a href="http://www.youtube.com/watch?v=0O2aH4XLbto" class="play-btn"><img src="tema/img/play-btn.png" alt=""></a>
+						<div class="video-desc">
+							<h3 class="h2 text-white text-uppercase">Being unique is the preference</h3>
+							<h4 class="text-white">Youtube video will appear in popover</h4>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Start Video Area -->
+			
+			
+			<!-- Start logo Area -->
+			<section class="logo-area">
+				<div class="container">
+					<div class="row">
+						
+					</div>
+				</div>	
+			</section>
+			<!-- End logo Area -->
+			
+							
+			<!-- start contact Area -->		
+			<section class="contact-area section-gap" id="contact">
+				<div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-60 col-lg-8">
+							<div class="title text-center">
+								<h1 class="mb-10">If you need, Just drop us a line</h1>
+								<p>Who are in extremely love with eco friendly system.</p>
+							</div>
+						</div>
+					</div>										
+					<form class="form-area " id="myForm" action="mail.php" method="post" class="contact-form text-right">
+						<div class="row">	
+						<div class="col-lg-6 form-group">
+							<input name="name" placeholder="Enter your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text">
+						
+							<input name="email" placeholder="Enter email address" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="common-input mb-20 form-control" required="" type="email">
+
+							<input name="subject" placeholder="Enter your subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your subject'" class="common-input mb-20 form-control" required="" type="text">
+						</div>
+						<div class="col-lg-6 form-group">
+							<textarea class="common-textarea mt-10 form-control" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
+							<button class="primary-btn mt-20">Send Message<span class="lnr lnr-arrow-right"></span></button>
+							<div class="alert-msg">								
+						</div>
+						</div></div>
+					</form>						
+					
+				</div>	
+			</section>
+			<!-- end contact Area -->		
+			
+			<!-- start footer Area -->		
+			<footer class="footer-area section-gap">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-5 col-md-6 col-sm-6">
+							<div class="single-footer-widget">
+								<h6>About Us</h6>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.
+								</p>
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            		<p class="footer-text">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+            		<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							</div>
+						</div>
+						<div class="col-lg-5  col-md-6 col-sm-6">
+							<div class="single-footer-widget">
+								<h6>Newsletter</h6>
+								<p>Stay update with our latest</p>
+								<div class="" id="mc_embed_signup">
+
+										<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
+
+										<div class="d-flex flex-row">
+
+											<input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
+
+
+				                            	<button class="click-btn btn btn-default"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+				                            	<div style="position: absolute; left: -5000px;">
+													<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+												</div>
+				                          	
+											<!-- <div class="col-lg-4 col-md-4">
+												<button class="bb-btn btn"><span class="lnr lnr-arrow-right"></span></button>
+											</div>  -->
+										</div>		
+										<div class="info"></div>
+										</form>
+								</div>
+								</div>
+						</div>						
+						<div class="col-lg-2 col-md-6 col-sm-6 social-widget">
+							<div class="single-footer-widget">
+								<h6>Follow Us</h6>
+								<p>Let us be social</p>
+								<div class="footer-social d-flex align-items-center">
+									<a href="#"><i class="fa fa-facebook"></i></a>
+									<a href="#"><i class="fa fa-twitter"></i></a>
+									<a href="#"><i class="fa fa-dribbble"></i></a>
+									<a href="#"><i class="fa fa-behance"></i></a>
+								</div>
+							</div>
+						</div>							
+					</div>
+				</div>
+			</footer>	
+			<!-- End footer Area -->			
+
+			<script src="tema/js/vendor/jquery-2.2.4.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.tema/js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+			<script src="tema/js/vendor/bootstrap.min.js"></script>
+			<script src="tema/js/jquery.ajaxchimp.min.js"></script>
+			<script src="tema/js/jquery.magnific-popup.min.js"></script>	
+			<script src="tema/js/owl.carousel.min.js"></script>			
+			<script src="tema/js/jquery.sticky.js"></script>
+			<script src="tema/js/slick.js"></script>
+			<script src="tema/js/jquery.counterup.min.js"></script>
+			<script src="tema/js/waypoints.min.js"></script>		
+			<script src="tema/js/main.js"></script>	
+		</body>
+	</html>
