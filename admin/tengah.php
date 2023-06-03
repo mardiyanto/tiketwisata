@@ -43,210 +43,114 @@ echo"<div class='row'>
 elseif($_GET['aksi']=='ikon'){
 include "../ikon.php";
 }
-///////////////////////////////////////////////////////////////////////////////////////////////////
-elseif($_GET['aksi']=='kategori'){
-echo"
-<div class='col-lg-12'>
-                    <div class='panel panel-default'>
-                        <div class='panel-heading'>
-			Data Kategori Artikel
-                        </div>
-                        <div class='panel-body'>
-                            <ul class='nav nav-pills'>
-                                <li class='active'><a href='#home-pills' data-toggle='tab'>Data Kategori</a>
-                                </li>
-                                <li><a href='#profile-pills' data-toggle='tab'>Input Kategori</a>
-                                </li>
-                               
-                            </ul>
-
-                            <div class='tab-content'>
-                                <div class='tab-pane fade in active' id='home-pills'>
-                                    <h4>Data Kategori </h4>
-                                   
-				   <div class='panel-body'>
-                            <div class='table-responsive'>
-                                <table id='example1' class='table table-bordered table-striped'>
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Nama</th>
-                                        </tr>
-                                    </thead>
-				    ";
-					$no=0;
-				$tebaru=mysqli_query($koneksi," SELECT * FROM kategori ORDER BY id_kategori DESC ");
-while ($t=mysqli_fetch_array($tebaru)){
-              
-$no++;    
-                                    echo"<tbody>
-                                        <tr>
-                                            <td>$no</td>
-                                            <td>	       <div class='btn-group'>
-                      <button type='button' class='btn btn-info'>$t[kategori]</button>
-                      <button type='button' class='btn btn-info dropdown-toggle' data-toggle='dropdown'>
-                        <span class='caret'></span>
-                        <span class='sr-only'>Toggle Dropdown</span>
-                      </button>
-                      <ul class='dropdown-menu' role='menu'>
-                        <li><a href='index.php?aksi=editkategori&id_k=$t[id_kategori]'>edit</a></li>
-                        <li><a href='master/kategori.php?id_k=$t[id_kategori]&act=hapus' onclick=\"return confirm ('Apakah yakin ingin menghapus $t[kategori] ?')\">hapus</a></li>
-                      </ul>
-                    </div></td>
-                                        </tr>
-                                       
-                                    </tbody>";
-}
-                                echo"</table>
-                            </div>
-                        </div>
-				 </div>
-				 
-				 
-                                <div class='tab-pane fade' id='profile-pills'>
-                                    <h4>Input Kategori</h4>
-                                   
-<form id='form1' method='post' enctype='multipart/form-data' action='master/kategori.php?act=inputkategori'>
-         <div class='form-grup'>
-        <label>Nama </label>
-        <input type='text' class='form-control'  name='kat'/><br>
-		
-                                            <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
-                                            <button type='submit' class='btn btn-primary'>Save </button>
-                                        </div> 
-    </form>  
-
-				</div></div>
-                            </div>
-                        </div>
-                    </div>
-           
-";}
-
-elseif($_GET['aksi']=='editkategori'){
-$tebaru=mysqli_query($koneksi," SELECT * FROM kategori WHERE id_kategori=$_GET[id_k] ");
-$t=mysqli_fetch_array($tebaru);
-echo"
-<div class='row'>
-                <div class='col-lg-12'>
-                    <div class='panel panel-default'>
-                        <div class='panel-heading'>EDIT
-                        </div>
-                        <div class='panel-body'>
-<form id='form1'  method='post' enctype='multipart/form-data' action='master/kategori.php?act=editkategori&id_k=$_GET[id_k]&gb=$t[gambar_kat]'>
-       <div class='form-grup'>
-        <label>Nama </label>
-        <input type='text' class='form-control' value='$t[kategori]' name='kat'/><br>
-		<label>Gambar</label>
-        <input type='file' class='smallInput' size='50'name='gambar'/><br><br />";
-		if($t['gambar_kat']!=0){echo"
-		<img src='../foto/kategori/$t[gambar_kat]' width='150' />";}
-            echo"</br><a href='index.php?aksi=kategori' class='btn btn-default' data-dismiss='modal'>kembali</a>
-                                            <button type='submit' class='btn btn-primary'>Save </button>
-                                        </div> </div>
-    </form></div> </div></div> </div></div> </div>
-";	
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-elseif($_GET['aksi']=='ruangan'){
-    echo"
-    <div class='col-lg-12'>
+elseif($_GET['aksi']=='tiket'){
+    echo"<div class='row'>
+                    <div class='col-lg-12'>
                         <div class='panel panel-default'>
-                            <div class='panel-heading'>
-                Data Kategori Artikel
+                            <div class='panel-heading'>INFORMASI 
                             </div>
-                            <div class='panel-body'>
-                                <ul class='nav nav-pills'>
-                                    <li class='active'><a href='#home-pills' data-toggle='tab'>Data ruangan</a>
-                                    </li>
-                                    <li><a href='#profile-pills' data-toggle='tab'>Input ruangan</a>
-                                    </li>
-                                   
-                                </ul>
-    
-                                <div class='tab-content'>
-                                    <div class='tab-pane fade in active' id='home-pills'>
-                                        <h4>Data Kategori </h4>
-                                       
-                       <div class='panel-body'>
-                                <div class='table-responsive'>
-                                    <table id='example1' class='table table-bordered table-striped'>
+                            <div class='panel-body'>	
+                <button class='btn btn-info' data-toggle='modal' data-target='#uiModal'>
+                                    Tambah Data
+                                </button> <a href='laporan.php?aksi=tiket' target='_blank' class='btn btn-info' ><i class='fa fa-print' ></i></span></a></br></br>
+                                   <div class='table-responsive'>		
+         <table id='example1' class='table table-bordered table-striped'>
                                         <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Nama</th>
+                                            <tr> <th>No</th>
+                                                <th>Nama Tiket</th>
+                                                <th>Harga</th>	 
+                                                 <th>AKSI</th>	
                                             </tr>
-                                        </thead>
+                                        </thead><tbody>
                         ";
-                        $no=0;
-                    $tebaru=mysqli_query($koneksi," SELECT * FROM ruang ORDER BY id_ruang DESC ");
-    while ($t=mysqli_fetch_array($tebaru)){
-                  
-    $no++;    
-                                        echo"<tbody>
-                                            <tr>
-                                                <td>$no</td>
-                                                <td>	       <div class='btn-group'>
-                          <button type='button' class='btn btn-info'>$t[nama_ruang]</button>
+                
+    $no=0;
+    $sql=mysqli_query($koneksi," SELECT * FROM tiket ORDER BY id_tiket ASC");
+    while ($t=mysqli_fetch_array($sql)){	
+    $no++;
+                                        echo"
+                                            <tr><td>$no</td>
+                                                <td>$t[nama_tiket]</td>
+                                                <td>$t[harga_tiket]</td> 
+                                <td><div class='btn-group'>
+                          <button type='button' class='btn btn-info'>AKSI</button>
                           <button type='button' class='btn btn-info dropdown-toggle' data-toggle='dropdown'>
                             <span class='caret'></span>
                             <span class='sr-only'>Toggle Dropdown</span>
                           </button>
                           <ul class='dropdown-menu' role='menu'>
-                            <li><a href='index.php?aksi=editruangan&id_ruang=$t[id_ruang]'>edit</a></li>
-                            <li><a href='hapus.php?aksi=hapusruangan&id_ruang=$t[id_ruang]' onclick=\"return confirm ('Apakah yakin ingin menghapus $t[nama_ruang] ?')\">hapus</a></li>
-                          </ul>
+                            <li><a href='index.php?aksi=edittiket&id_tiket=$t[id_tiket]' title='Edit'><i class='fa fa-pencil'></i>edit</a></li>
+                            <li><a href='hapus.php?aksi=hapustiket&id_tiket=$t[id_tiket]' onclick=\"return confirm ('Apakah yakin ingin menghapus $t[nama_tiket] ?')\" title='Hapus'><i class='fa fa-remove'></i>hapus</li>
+                            </ul>
                         </div></td>
-                                            </tr>
-                                           
-                                        </tbody>";
+                                            </tr>";
     }
-                                    echo"</table>
-                                </div>
-                            </div>
-                     </div>
-                     
-                     
-                                    <div class='tab-pane fade' id='profile-pills'>
-                                        <h4>Input ruangan</h4>
-                                       
-    <form id='form1' method='post' enctype='multipart/form-data' action='input.php?aksi=inputruangan'>
-             <div class='form-grup'>
-            <label>Nama Ruangan</label>
-            <input type='text' class='form-control'  name='nama_ruang'/><br>
-            
-                                                <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
-                                                <button type='submit' class='btn btn-primary'>Save </button>
-                                            </div> 
-        </form>  
-    
-                    </div></div>
+                                    echo"
+                                        </tbody></table>
                                 </div>
                             </div>
                         </div>
-               
-    ";}
+                    </div>
+                   </div>";			
     
-    elseif($_GET['aksi']=='editruangan'){
-    $tebaru=mysqli_query($koneksi," SELECT * FROM ruang WHERE id_ruang=$_GET[id_ruang] ");
+    ////////////////input admin			
+    
+    echo"			
+    <div class='col-lg-12'>
+                            <div class='modal fade' id='uiModal' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
+                                    <div class='modal-dialog'>
+                                        <div class='modal-content'>
+                                            <div class='modal-header'>
+                                                <button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
+                                                <h4 class='modal-title' id='H3'>Input Data</h4>
+                                            </div>
+                                            <div class='modal-body'>
+                                               <form role='form' method='post' action='input.php?aksi=inputtiket'>
+                                        
+                                                <label>nama_tiket</label>
+                                                <input type='text' class='form-control' name='nama_tiket'/><br>
+                                                <label>HARGA</label>
+                                                <input type='text' class='form-control' name='harga_tiket'/><br>
+                                                <label>Keterangan</label>
+                                                <input type='text' class='form-control' name='keterangan'/><br>
+                                                <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
+                                                <button type='submit' class='btn btn-primary'>Save </button>
+                                            </div>
+                        </form>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                </div>			
+    "; 
+    }
+    /////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    elseif($_GET['aksi']=='edittiket'){
+    $tebaru=mysqli_query($koneksi," SELECT * FROM tiket WHERE id_tiket=$_GET[id_tiket] ");
     $t=mysqli_fetch_array($tebaru);
     echo"
     <div class='row'>
                     <div class='col-lg-12'>
                         <div class='panel panel-default'>
-                            <div class='panel-heading'>EDIT
+                            <div class='panel-heading'>EDIT  $t[nama_tiket] $t[id_tiket]
                             </div>
                             <div class='panel-body'>
-    <form id='form1'  method='post' enctype='multipart/form-data' action='edit.php?aksi=proseseditruangan&id_ruang=$_GET[id_ruang]'>
-           <div class='form-grup'>
-            <label>Nama Ruangan</label>
-            <input type='text' class='form-control' value='$t[nama_ruang]' name='nama_ruang'/><br>
-            <a href='index.php?aksi=kategori' class='btn btn-default' data-dismiss='modal'>kembali</a>
+    <form id='form1'  method='post' action='edit.php?aksi=prosesedittiket&id_tiket=$t[id_tiket]'>
+                                                <label>nama tiket</label>
+                                                <input type='text' class='form-control' value='$t[nama_tiket]' name='nama_tiket'/><br>
+                                                <label>harga</label>
+                                                <input type='text' class='form-control' value='$t[harga_tiket]' name='harga_tiket'/><br>
+                                                <label>Keterangan</label>
+                                                <input type='text' class='form-control' value='$t[keterangan]' name='keterangan'/><br>
+                                  
+            
+            <div class='modal-footer'>
+                                                <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
                                                 <button type='submit' class='btn btn-primary'>Save </button>
                                             </div> </div>
-        </form></div> </div></div> </div></div> </div>
-    ";	
+        </form></div> </div></div></div>
+    ";
     }
 
 elseif($_GET['aksi']=='profil'){

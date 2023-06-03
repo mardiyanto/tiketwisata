@@ -6,15 +6,11 @@
     header("location:../login.php?alert=belum_login");
   }
 ///////////////////////////lihat/////////////////////////////////////////////
-if($_GET['aksi']=='proseseditaset'){
-mysqli_query($koneksi,"UPDATE aset SET id_kategori='$_POST[id_kategori]',id_ruang='$_POST[id_ruang]',nama_aset='$_POST[nama_aset]',
-spek='$_POST[spek]',jumlah='$_POST[jumlah]',tgl_beli='$_POST[tgl_beli]',kondisi='$_POST[kondisi]' WHERE id_aset='$_GET[id_aset]'");
-echo "<script>window.location=('index.php?aksi=aset')</script>";
+if($_GET['aksi']=='prosesedittiket'){
+mysqli_query($koneksi,"UPDATE tiket SET nama_tiket='$_POST[nama_tiket]',harga_tiket='$_POST[harga_tiket]',keterangan='$_POST[keterangan]' WHERE id_tiket='$_GET[id_tiket]'");
+echo "<script>window.location=('index.php?aksi=tiket')</script>";
 }
-elseif($_GET['aksi']=='proseseditruangan'){
-	mysqli_query($koneksi,"UPDATE ruang SET nama_ruang='$_POST[nama_ruang]'");
-	echo "<script>window.location=('index.php?aksi=ruangan')</script>";
-}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 elseif($_GET['aksi']=='proseseditmenu'){
 	mysqli_query($koneksi,"UPDATE menu SET nama_menu='$_POST[nama_menu]',link='$_POST[link]',link_b='$_POST[link_b]',status='$_POST[status]',icon_menu='$_POST[icon_menu]',aktif='$_POST[aktif]' WHERE id_menu='$_GET[id_menu]'");

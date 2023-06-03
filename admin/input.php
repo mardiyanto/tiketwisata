@@ -6,15 +6,19 @@
     header("location:../login.php?alert=belum_login");
   }
 ///////////////////////////lihat/////////////////////////////////////////////
-if($_GET['aksi']=='inputaset'){
-mysqli_query($koneksi,"insert into aset (id_kategori,id_ruang,nama_aset,spek,jumlah,tgl_beli,kondisi) 
-values ('$_POST[id_kategori]','$_POST[id_ruang]','$_POST[nama_aset]','$_POST[spek]','$_POST[jumlah]','$_POST[tgl_beli]','$_POST[kondisi]')");  
-echo "<script>window.location=('index.php?aksi=aset')</script>";
+if($_GET['aksi']=='inputtiket'){
+// Memeriksa apakah input kosong
+if (empty($_POST[nama_tiket]) || empty($_POST[harga_tiket]) || empty($_POST[keterangan])) {
+	echo "<script>window.alert('Data yang Anda isikan belum lengkap');
+	window.location=('index.php?aksi=tiket')</script>";
+	exit();
+}	
+mysqli_query($koneksi,"insert into tiket (nama_tiket,harga_tiket,keterangan) 
+values ('$_POST[nama_tiket]','$_POST[harga_tiket]','$_POST[keterangan]')");  
+echo "<script>window.location=('index.php?aksi=tiket')</script>";
 }
-if($_GET['aksi']=='inputruangan'){
-	mysqli_query($koneksi,"insert into ruang (nama_ruang) values ('$_POST[nama_ruang]')");  
-	echo "<script>window.location=('index.php?aksi=ruangan')</script>";
-	}
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 elseif($_GET['aksi']=='inputmenu'){
 	mysqli_query($koneksi,"insert into menu (nama_menu,link,link_b,status,icon_menu,aktif) values ('$_POST[nama_menu]','$_POST[link]','$_POST[link_b]','$_POST[status]','$_POST[icon_menu]','$_POST[aktif]')");  

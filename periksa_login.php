@@ -22,7 +22,7 @@ if($sebagai == "administrator"){
 		$_SESSION['status'] = "administrator_logedin";
 		header("location:admin/index.php?aksi=home");
 	}else{
-		header("location:index.php?alert=gagal");
+		header("location:login.php?alert=gagal");
 	}
 
 }
@@ -39,7 +39,7 @@ elseif($sebagai == "ukp"){
 		$_SESSION['status'] = "ukp_logedin";
 		header("location:ukp/index.php?aksi=home");
 	}else{
-		header("location:index.php?alert=gagal");
+		header("location:login.php?alert=gagal");
 	}
 	}
 elseif($sebagai == "ukm"){
@@ -55,7 +55,7 @@ elseif($sebagai == "ukm"){
 		$_SESSION['status'] = "ukm_logedin";
 		header("location:ukm/index.php?aksi=home");
 	}else{
-		header("location:index.php?alert=gagal");
+		header("location:login.php?alert=gagal");
 	}
 }
 
@@ -71,6 +71,6 @@ elseif($sebagai == "pegawai"){
 		$_SESSION['status'] = "pegawai_logedin";
 		header("location:pegawai/index.php?aksi=home");
 	}else{
-		header("location:index.php?alert=gagal");
+		header("location:login.php?alert=gagal");
 	}
 }
