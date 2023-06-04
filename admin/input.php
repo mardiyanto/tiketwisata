@@ -17,6 +17,11 @@ mysqli_query($koneksi,"insert into tiket (nama_tiket,harga_tiket,keterangan)
 values ('$_POST[nama_tiket]','$_POST[harga_tiket]','$_POST[keterangan]')");  
 echo "<script>window.location=('index.php?aksi=tiket')</script>";
 }
+elseif($_GET['aksi']=='inputpembayaran'){
+mysqli_query($koneksi,"insert into pembayaran (metode_bayar,nomor_bayar,atas_nama) 
+values ('$_POST[metode_bayar]','$_POST[nomor_bayar]','$_POST[atas_nama]')");  
+echo "<script>window.location=('index.php?aksi=pembayaran')</script>";
+}
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 elseif($_GET['aksi']=='inputpengunjung'){
 	// Memeriksa apakah input kosong
@@ -32,13 +37,13 @@ elseif($_GET['aksi']=='inputpengunjung'){
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 elseif($_GET['aksi']=='inputbooking'){
 	// Memeriksa apakah input kosong
-	if (empty($_POST[id_pengunjung]) || empty($_POST[id_tiket]) || empty($_POST[jml])) {
+	if (empty($_POST[id_pengunjung]) || empty($_POST[id_tiket])) {
 		echo "<script>window.alert('Data yang Anda isikan belum lengkap');
 		window.location=('index.php?aksi=booking')</script>";
 		exit();
 	}	
-	mysqli_query($koneksi,"insert into booking (id_pengunjung,kode_booking,id_tiket,jml) 
-	values ('$_POST[id_pengunjung]','$_POST[kode_booking]','$_POST[id_tiket]','$_POST[jml]')");  
+	mysqli_query($koneksi,"insert into booking (id_pengunjung,kode_booking,id_tiket,dewas,anak) 
+	values ('$_POST[id_pengunjung]','$_POST[kode_booking]','$_POST[id_tiket]','$_POST[dewasa]','$_POST[anak]')");  
 	echo "<script>window.location=('index.php?aksi=booking')</script>";
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////

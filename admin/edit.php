@@ -11,11 +11,21 @@ mysqli_query($koneksi,"UPDATE tiket SET nama_tiket='$_POST[nama_tiket]',harga_ti
 echo "<script>window.alert('Data Berhasil di edit dan disimpan');
 window.location=('index.php?aksi=tiket')</script>";
 }
+elseif($_GET['aksi']=='proseseditpembayaran'){
+	mysqli_query($koneksi,"UPDATE pembayaran SET metode_bayar='$_POST[metode_bayar]',nomor_bayar='$_POST[nomor_bayar]',atas_nama='$_POST[atas_nama]' WHERE id_bayar='$_GET[id_bayar]'");
+	echo "<script>window.alert('Data Berhasil di edit dan disimpan');
+	window.location=('index.php?aksi=pembayaran')</script>";
+	}
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 elseif($_GET['aksi']=='proseseditpengunjung'){
 	mysqli_query($koneksi,"UPDATE pengunjung SET nama_pengunjung='$_POST[nama_pengunjung]',email_pengunjung='$_POST[email_pengunjung]',no_hp='$_POST[no_hp]',alamat='$_POST[alamat]' WHERE id_pengunjung='$_GET[id_pengunjung]'");
 	echo "<script>window.alert('Data Berhasil di edit dan disimpan');
 	window.location=('index.php?aksi=pengunjung')</script>";
+}
+elseif($_GET['aksi']=='proseseditkonfirmasi'){
+	mysqli_query($koneksi,"UPDATE konfirmasi SET status_bayar='lunas' WHERE id_konfirmasi='$_GET[id_konfirmasi]'");
+	mysqli_query($koneksi,"UPDATE booking SET status='paid' WHERE kode_booking='$_POST[kode_booking]'");
+echo "<script>window.location=('index.php?aksi=konfirmasi')</script>";
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 elseif($_GET['aksi']=='proseseditmenu'){

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 03 Jun 2023 pada 18.16
+-- Generation Time: 04 Jun 2023 pada 14.45
 -- Versi Server: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -33,18 +33,65 @@ CREATE TABLE `booking` (
   `kode_booking` varchar(100) NOT NULL,
   `id_pengunjung` int(10) NOT NULL,
   `id_tiket` varchar(100) NOT NULL,
-  `harga` varchar(20) NOT NULL,
-  `jml` varchar(10) NOT NULL,
-  `nm_bk` varchar(100) NOT NULL,
-  `ket` text NOT NULL
+  `anak` varchar(10) NOT NULL,
+  `dewasa` varchar(10) NOT NULL,
+  `status` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `booking`
 --
 
-INSERT INTO `booking` (`id_booking`, `kode_booking`, `id_pengunjung`, `id_tiket`, `harga`, `jml`, `nm_bk`, `ket`) VALUES
-(1, '0TN1ALU7C9XVC', 1, '1', '', '2', '', '');
+INSERT INTO `booking` (`id_booking`, `kode_booking`, `id_pengunjung`, `id_tiket`, `anak`, `dewasa`, `status`) VALUES
+(1, '7808608', 2, '1', '5', '5', 'unpaid'),
+(2, '3527555', 2, '1', '4', '4', 'unpaid'),
+(3, '7408084', 2, '1', '0', '2', 'unpaid'),
+(4, '1156915', 1, '1', '4', '2', 'paid'),
+(5, '9252511', 1, '1', '2', '2', 'paid');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `konfirmasi`
+--
+
+CREATE TABLE `konfirmasi` (
+  `id_konfirmasi` int(20) NOT NULL,
+  `id_booking` int(20) NOT NULL,
+  `id_bayar` int(20) NOT NULL,
+  `bukti` varchar(100) NOT NULL,
+  `tgl` varchar(20) NOT NULL,
+  `status_bayar` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `konfirmasi`
+--
+
+INSERT INTO `konfirmasi` (`id_konfirmasi`, `id_booking`, `id_bayar`, `bukti`, `tgl`, `status_bayar`) VALUES
+(1, 4, 1, '1_2023-06-04.jpg', '2023-06-04', 'lunas'),
+(2, 5, 2, '2_2023-06-04.jpg', '2023-06-04', 'lunas');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `pembayaran`
+--
+
+CREATE TABLE `pembayaran` (
+  `id_bayar` int(20) NOT NULL,
+  `metode_bayar` varchar(50) NOT NULL,
+  `nomor_bayar` varchar(50) NOT NULL,
+  `atas_nama` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `pembayaran`
+--
+
+INSERT INTO `pembayaran` (`id_bayar`, `metode_bayar`, `nomor_bayar`, `atas_nama`) VALUES
+(1, 'BAYAR DANA', '082373971991', 'UMAR'),
+(2, 'BAYAR BNI', '978654343QF', 'JUMANTO');
 
 -- --------------------------------------------------------
 
@@ -65,7 +112,8 @@ CREATE TABLE `pengunjung` (
 --
 
 INSERT INTO `pengunjung` (`id_pengunjung`, `nama_pengunjung`, `email_pengunjung`, `no_hp`, `alamat`) VALUES
-(1, 'AKABEST', 'mardybest@gmail.com', '08234758674', 'Jl wismarini no 09 Pringsewu');
+(1, 'AKABEST', 'mardybest@gmail.com', '082373971991', 'Jl wismarini no 09 Pringsewu'),
+(2, 'akabest', 'aka@gmail.com', '0756875858', 'aka@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -103,6 +151,7 @@ CREATE TABLE `tiket` (
   `id_tiket` int(25) NOT NULL,
   `nama_tiket` varchar(50) NOT NULL,
   `harga_tiket` varchar(50) NOT NULL,
+  `harga_tiket1` varchar(10) NOT NULL,
   `keterangan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -110,9 +159,8 @@ CREATE TABLE `tiket` (
 -- Dumping data untuk tabel `tiket`
 --
 
-INSERT INTO `tiket` (`id_tiket`, `nama_tiket`, `harga_tiket`, `keterangan`) VALUES
-(0, 'ANAK-ANAK', '5000', 'UNTUK TIKET ANAK'),
-(1, 'DEWASA', '10000', 'HARGA MASUK DEWASA');
+INSERT INTO `tiket` (`id_tiket`, `nama_tiket`, `harga_tiket`, `harga_tiket1`, `keterangan`) VALUES
+(1, 'WISATA LENTERA GARDEN', '10000', '5000', 'HARGA MASUK DEWASA');
 
 -- --------------------------------------------------------
 
@@ -148,6 +196,18 @@ ALTER TABLE `booking`
   ADD PRIMARY KEY (`id_booking`);
 
 --
+-- Indexes for table `konfirmasi`
+--
+ALTER TABLE `konfirmasi`
+  ADD PRIMARY KEY (`id_konfirmasi`);
+
+--
+-- Indexes for table `pembayaran`
+--
+ALTER TABLE `pembayaran`
+  ADD PRIMARY KEY (`id_bayar`);
+
+--
 -- Indexes for table `pengunjung`
 --
 ALTER TABLE `pengunjung`
@@ -179,12 +239,22 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id_booking` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_booking` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `konfirmasi`
+--
+ALTER TABLE `konfirmasi`
+  MODIFY `id_konfirmasi` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `pembayaran`
+--
+ALTER TABLE `pembayaran`
+  MODIFY `id_bayar` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `pengunjung`
 --
 ALTER TABLE `pengunjung`
-  MODIFY `id_pengunjung` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pengunjung` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `profil`
 --
@@ -194,7 +264,7 @@ ALTER TABLE `profil`
 -- AUTO_INCREMENT for table `tiket`
 --
 ALTER TABLE `tiket`
-  MODIFY `id_tiket` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_tiket` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `user`
 --

@@ -1,4 +1,5 @@
-<?php  include 'koneksi.php'; ?>
+<?php  include 'koneksi.php'; 
+  session_start(); ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -34,7 +35,7 @@
         <nav class="navbar navbar-static-top">
           <div class="container">
             <div class="navbar-header">
-              <a href="sys/bootstrap/index2.html" class="navbar-brand"><b>Admin</b>LTE</a>
+              <a href="sys/bootstrap/index2.html" class="navbar-brand"><?php echo"$k_k[alias]";?></a>
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
                 <i class="fa fa-bars"></i>
               </button>
@@ -55,51 +56,50 @@
             <!-- Navbar Right Menu -->
               <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
-    
-
-     
-     
-                  <!-- User Account Menu -->
-                  <li class="dropdown user user-menu">
+                <?php if( $_SESSION['nama']==''){?>
+                  <li ><a href="booking.php?aksi=home">login</a></li>
+<?php }else{?>
+ <li class="dropdown user user-menu">
                     <!-- Menu Toggle Button -->
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                       <!-- The user image in the navbar-->
-                      <img src="sys/bootstrap/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                      <img src="sys/bootstrap/dist/img/avatar2.png" class="user-image" alt="User Image">
                       <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                      <span class="hidden-xs">Alexander Pierce</span>
+                      <span class="hidden-xs"><?php echo "$_SESSION[nama]"; ?></span>
                     </a>
                     <ul class="dropdown-menu">
                       <!-- The user image in the menu -->
+                     
                       <li class="user-header">
-                        <img src="sys/bootstrap/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                        <p>
-                          Alexander Pierce - Web Developer
+                        <img src="sys/bootstrap/dist/img/avatar2.png" class="img-circle" alt="User Image">
+                        <p>                       
+            <?php echo"$_SESSION[nama]"; ?>
                           <small>Member since Nov. 2012</small>
                         </p>
                       </li>
                       <!-- Menu Body -->
                       <li class="user-body">
-                        <div class="col-xs-4 text-center">
-                          <a href="#">Followers</a>
-                        </div>
-                        <div class="col-xs-4 text-center">
-                          <a href="#">Sales</a>
-                        </div>
-                        <div class="col-xs-4 text-center">
-                          <a href="#">Friends</a>
-                        </div>
+                     
+                       
                       </li>
                       <!-- Menu Footer-->
                       <li class="user-footer">
                         <div class="pull-left">
-                          <a href="#" class="btn btn-default btn-flat">Profile</a>
+                          <a href="booking.php?aksi=tiket" class="btn btn-default btn-flat">TIKET SAYA</a>
                         </div>
                         <div class="pull-right">
-                          <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                          <a href="booking.php?aksi=logout" class="btn btn-default btn-flat">Sign out</a>
                         </div>
                       </li>
                     </ul>
-                  </li>
+                  </li> 
+ 
+<?php }?>
+
+     
+     
+                  <!-- User Account Menu -->
+                 
                 </ul>
               </div><!-- /.navbar-custom-menu -->
           </div><!-- /.container-fluid -->
@@ -109,63 +109,7 @@
       <div class="content-wrapper">
         <div class="container">
           <!-- Content Header (Page header) -->
-
-
-          <!-- Main content -->
-          <section class="content">
-          <h2 class="page-header">Harga Peket Wisata dan Register</h2>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="box box-solid">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Harga</h3>
-                </div><!-- /.box-header -->
-                <div class="box-body">
-                  <div class="box-group" id="accordion">
-                    <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
-                    <div class="panel box box-primary">
-                      <div class="box-header with-border">
-                        <h4 class="box-title">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                           harga tiket untuk masuk 
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="collapseOne" class="panel-collapse collapse in">
-                        <div class="box-body">
-                          Harga Tiket masuk Kami adalah untuk dewasa Rp.10.000 dan Untuk Anak-Anak Rp.5.000
-                        </div>
-                      </div>
-                    </div>
-            
-                  </div>
-                </div><!-- /.box-body -->
-              </div><!-- /.box -->
-            </div><!-- /.col -->
-            <div class="col-md-6">
-              <div class="box box-solid">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Isikan Data Anda untuk Booking</h3>
-                </div><!-- /.box-header -->
-                <div class="box-body">
-				<form action="reg.php?aksi=inputpengunjung" method="post">
-				<label>Nama</label>
-                                                    <input type='text' class='form-control' name='nama_pengunjung'/><br>
-                                                    <label>No Hp</label>
-                                                    <input type='text' class='form-control' name='no_hp'/><br>
-                                                    <label>Email</label>
-                                                    <input type='email' class='form-control' name='email_pengunjung'/><br>
-                                                    <label>Alamat Lengkap</label>
-                                                    <input type='text' class='form-control' name='alamat'/><br>
-                                                    <button type='submit' class='btn btn-primary'>SIMPAN </button>
-        </form>
-
-                </div><!-- /.box-body -->
-              </div><!-- /.box -->
-            </div><!-- /.col -->
-          </div><!-- /.row -->
-          <!-- END ACCORDION & CAROUSEL-->
-          </section><!-- /.content -->
+         <?php include 'reg.php'; ?>
         </div><!-- /.container -->
       </div><!-- /.content-wrapper -->
       <footer class="main-footer">
