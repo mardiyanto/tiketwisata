@@ -495,7 +495,7 @@ elseif($_GET['aksi']=='inputkonfirmasi'){
 			move_uploaded_file($tmpName, $folderTujuan . $namaFileBaru);
 	
 			// Menyimpan informasi file ke dalam database
-			$query = "INSERT INTO konfirmasi (id_booking,id_bayar, bukti, tgl,status_bayar) VALUES ('$_POST[id_booking]','$_POST[id_bayar]', '$namaFileBaru', '$tgl', 'bayar')";
+			$query = "INSERT INTO konfirmasi (id_booking,id_bayar, bukti, tgl,status_bayar) VALUES ('$_POST[id_booking]','$_POST[id_bayar]', '$namaFileBaru', '$tgl', 'lunas')";
 			mysqli_query($koneksi, $query);
 			
 	
